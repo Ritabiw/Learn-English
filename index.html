@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        * {
+         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -16,7 +16,7 @@
         
         body {
             font-family: 'Nunito', sans-serif;
-            background: linear-gradient(135deg, #e0f7fa, #bbdefb, #c5e1a5);
+            background: linear-gradient(135deg,#1a2a6c, #2c3e50, #1a1a2e);
             min-height: 100vh;
             padding: 20px;
             overflow-x: hidden;
@@ -25,55 +25,34 @@
         header {
             text-align: center;
             padding: 25px 0;
-            background: linear-gradient(135deg, #ff6f00, #ff8f00, #ff6f00);
+            background: linear-gradient(135deg,#004d40, #00796b, #004d40);
             border-radius: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(255, 111, 0, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 255, 200, 0.959);
             color: white;
             position: relative;
             overflow: hidden;
         }
         
-        header::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: linear-gradient(45deg, #ff9800, #ff5722, #ff9800);
-            z-index: -1;
-            filter: blur(15px);
-            opacity: 0.4;
-        }
-        
         h1 {
-            font-family: 'Fredoka', sans-serif;
+            font-family: 'bold', 'Fredoka', sans-serif;
             font-size: 3.5rem;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.301);
             letter-spacing: 1px;
             margin-bottom: 10px;
         }
         
-        h2 {
-            font-family: 'Fredoka', sans-serif;
-            text-align: center;
-            margin: 30px 0 20px;
-            color: #ff6f00;
-            font-size: 2.5rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-        
         .subtitle {
+          font-family: 'bold', 'Fredoka', sans-serif;
             font-size: 1.4rem;
             opacity: 0.95;
             max-width: 700px;
             margin: 0 auto;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 2px rgba(8, 6, 6, 0.3);
         }
         
         .instructions {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgb(255, 255, 255);
             padding: 20px 25px;
             border-radius: 15px;
             max-width: 900px;
@@ -82,171 +61,51 @@
             text-align: center;
             font-size: 1.2rem;
             color: #333;
-            border: 3px solid #ff8f00;
+            border: 3px solid#00ff95;
             position: relative;
-        }
-        
-        .instructions::after {
-            content: "";
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff6f00"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat center;
-            background-size: contain;
-            animation: bounce 2s infinite;
         }
         
         .instructions p {
             margin-bottom: 15px;
             line-height: 1.6;
+            text-align: center;
+            font-family: 'bold', 'Fredoka', sans-serif;
         }
         
         .instructions i {
-            color: #ff6f00;
+            color: #723d01;
             margin: 0 5px;
         }
         
-        .animals-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 30px;
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 20px;
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
         }
         
-        .animal-card {
+        .filter-btn {
             background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            position: relative;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-            border: 4px solid transparent; /* Adicionado */
-        }
-        
-        /* BORDA VERMELHA PARA ANIMAIS NÃO DESCOBERTOS */
-        .animal-card.not-discovered {
-            border: 4px solid red;
-            border-radius: 24px;
-        }
-        
-        .animal-card.selected {
-            border: 4px solid #4CAF50 !important;
-            box-shadow: 0 0 15px rgba(76, 175, 80, 0.7);
-        }
-        
-        .animal-card:hover {
-            transform: translateY(-15px) rotate(2deg) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-        }
-        
-        .animal-card:active {
-            transform: translateY(-5px) scale(0.98);
-        }
-        
-        .animal-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 4px solid #ff8f00;
-            transition: transform 0.3s ease;
-        }
-        
-        .animal-card:hover .animal-image {
-            transform: scale(1.1);
-        }
-        
-        .animal-names {
-            padding: 20px 15px;
-            text-align: center;
-            background: linear-gradient(to bottom, #fff, #f5f5f5);
-        }
-        
-        .english-name {
-            font-size: 1.6rem;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
             font-weight: bold;
-            color: #ff6f00;
-            margin-bottom: 8px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-            letter-spacing: 0.5px;
-        }
-        
-        .portuguese-name {
-            font-size: 1.3rem;
-            color: #333;
-            font-weight: 600;
-        }
-        
-        .sound-icon {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            color: #0044ff;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: #ff6f00;
-            font-size: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            z-index: 10;
+            gap: 8px;
         }
         
-        .animal-card:hover .sound-icon {
-            transform: scale(1.2);
+        .filter-btn:hover, .filter-btn.active {
             background: #ff6f00;
             color: white;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 30px;
-            color: #555;
-            font-size: 1.1rem;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .progress-container {
-        width: 100%;
-        max-width: 800px;
-        height: 20px;
-        background: #e0e0e0;
-        border-radius: 10px;
-        margin: 30px auto;
-        overflow: hidden;
-        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        
-        .progress-bar {
-        height: 100%;
-        background: linear-gradient(90deg, #4caf50, #8bc34a);
-        width: 0%;
-        border-radius: 10px;
-        transition: width 0.5s ease;
-        }
-        
-        .progress-text {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #333;
-            font-weight: bold;
-            margin-top: 10px;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 111, 0, 0.4);
         }
         
         .floating-animals {
@@ -295,26 +154,7 @@
                 transform: translateX(-50%) translateY(-7px);
             }
         }
-        
-        .celebrate {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1000;
-            display: none;
-        }
-        
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #f00;
-            animation: confetti-fall 5s linear forwards;
-        }
-        
+  
         @keyframes confetti-fall {
             0% {
                 transform: translateY(-100px) rotate(0deg);
@@ -326,393 +166,70 @@
             }
         }
         
-        .spinner {
-            width: 40px;
-            height: 40px;
-            margin: 20px auto;
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-left: 4px solid #ff6f00;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            display: none;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        .help-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #ff6f00;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .main {
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            z-index: 100;
-            transition: all 0.3s ease;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px auto;
+            max-width: 1200px;
         }
         
-        .help-button:hover {
-            transform: scale(1.1);
-            background: #ff8f00;
-        }
-        
-        .dark-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #333;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            z-index: 100;
-            transition: all 0.3s ease;
-        }
-        
-        .dark-mode-toggle:hover {
-            transform: scale(1.1);
-            background: #ff6f00;
-            color: white;
-        }
-        
-        body.dark-mode {
-            background: linear-gradient(135deg, #1a2a6c, #2c3e50, #1a1a2e);
-            color: #f0f0f0;
-        }
-        body.dark-mode header {
-            background: linear-gradient(135deg, #004d40, #00796b, #004d40);
-            box-shadow: 0 8px 25px rgba(0, 121, 107, 0.4);
-        }
-        body.dark-mode header::before {
-            background: linear-gradient(45deg, #00897b, #004d40, #00897b);
-        }
-        body.dark-mode .instructions {
-            background: rgba(40, 40, 40, 0.9);
-            color: #f0f0f0;
-            border-color: #00796b;
-        }
-        body.dark-mode .instructions i {
-            color: #00796b;
-        }
-        body.dark-mode .instructions::after {
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300796b"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat center;
-            background-size: contain;
-        }
-        body.dark-mode .animal-card {
-            background: #333;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-        }
-        body.dark-mode .animal-card:hover {
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-        }
-        body.dark-mode .animal-image {
-            border-bottom-color: #00796b;
-        }
-        body.dark-mode .animal-names {
-            background: linear-gradient(to bottom, #333, #444);
-        }
-        body.dark-mode .english-name {
-            color: #00bfa5;
-        }
-        body.dark-mode .portuguese-name {
-            color: #f0f0f0;
-        }
-        body.dark-mode .sound-icon {
-            background: rgba(50, 50, 50, 0.9);
-            color: #00bfa5;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        }
-        body.dark-mode .animal-card:hover .sound-icon {
-            background: #00bfa5;
-            color: #333;
-        }
-        body.dark-mode footer {
-            background: rgba(40, 40, 40, 0.8);
-            color: #bbb;
-        }
-        body.dark-mode .progress-container {
-            background: #555;
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4);
-        }
-        body.dark-mode .progress-bar {
-            background: linear-gradient(90deg, #66bb6a, #a5d6a7);
-        }
-        body.dark-mode .progress-text {
-            color: #f0f0f0;
-        }
-        body.dark-mode .spinner {
-            border-left: 4px solid #00bfa5;
-        }
-        body.dark-mode .dark-mode-toggle {
-            background: rgba(50, 50, 50, 0.9);
-            color: #f0f0f0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-        }
-        body.dark-mode .dark-mode-toggle:hover {
-            background: #00bfa5;
-            color: #333;
-        }
-        body.dark-mode .animal-card.selected {
-            border: 4px solid #66bb6a !important;
-            box-shadow: 0 0 15px rgba(102, 187, 106, 0.7);
-        }
-        
-        .help-message {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
+        .card {
+            width: 300px;
+            height: 300px; /* Aumentar altura */
             background: white;
-            color: #333;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            max-width: 250px;
-            display: none;
-            z-index: 100;
-            font-size: 0.9rem;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        body.dark-mode .help-message {
-            background: #333;
-            color: #f0f0f0;
-        }
-
-        /* Estilos para a seção do quiz */
-        .quiz-section {
-            background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
-            padding: 30px;
-            margin: 40px auto;
-            max-width: 800px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            border: 3px solid #ff8f00;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             position: relative;
-        }
-
-        .quiz-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .quiz-title {
-            font-family: 'Fredoka', sans-serif;
-            font-size: 2rem;
-            color: #ff6f00;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .quiz-progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #4caf50, #8bc34a);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        .quiz-content {
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
-        }
-
-        .quiz-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 20px;
-            object-fit: cover;
-            border: 5px solid #ff8f00;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .quiz-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .quiz-option {
-            background: white;
-            border: 3px solid #ff8f00;
-            border-radius: 15px;
-            padding: 20px;
-            font-size: 1.5rem;
-            font-weight: bold;
+            transition: all 0.4s ease;
             cursor: pointer;
-            transition: all 0.3s ease;
-            color: #333;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            min-height: 100px;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 35px rgb(0, 255, 170);
+        }
+        
+        .card:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        
+        .card-title {
+            width: 100%;
+            height: 30%;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-        }
-
-        .quiz-option:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            background: #fff8e1;
-        }
-
-        .quiz-option.correct {
-            background: #4CAF50;
+            background: linear-gradient(135deg, #004d40, #00796b);
             color: white;
-            border-color: #388E3C;
-            animation: pulse 0.5s;
-        }
-
-        .quiz-option.incorrect {
-            background: #f44336;
-            color: white;
-            border-color: #d32f2f;
-        }
-
-        .quiz-feedback {
+            font-family: bold, 'Fredoka', sans-serif;
             font-size: 1.8rem;
-            font-weight: bold;
-            margin-top: 15px;
-            min-height: 40px;
-        }
-
-        .quiz-next {
-            background: #ff6f00;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 15px 40px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-            box-shadow: 0 5px 15px rgba(255, 111, 0, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .quiz-next:hover {
-            transform: scale(1.05);
-            background: #ff8f00;
-        }
-
-        .quiz-result {
-            font-size: 2rem;
-            margin: 20px 0;
-            font-weight: bold;
-            color: #ff6f00;
-        }
-
-        .quiz-restart {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 15px 40px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .quiz-restart:hover {
-            transform: scale(1.05);
-            background: #66bb6a;
-        }
-
-        .quiz-section.dark-mode {
-            background: rgba(40, 40, 40, 0.9);
-            border-color: #00796b;
-        }
-
-        .quiz-section.dark-mode .quiz-option {
-            background: #444;
-            color: #f0f0f0;
-            border-color: #00bfa5;
-        }
-
-        .quiz-section.dark-mode .quiz-option:hover {
-            background: #555;
-        }
-
-        .quiz-section.dark-mode .quiz-option.correct {
-            background: #66bb6a;
-            border-color: #4CAF50;
-        }
-
-        .quiz-section.dark-mode .quiz-option.incorrect {
-            background: #e57373;
-            border-color: #f44336;
-        }
-
-        .quiz-section.dark-mode .quiz-next {
-            background: #00796b;
-            box-shadow: 0 5px 15px rgba(0, 121, 107, 0.4);
-        }
-
-        .quiz-section.dark-mode .quiz-restart {
-            background: #66bb6a;
-            box-shadow: 0 5px 15px rgba(102, 187, 106, 0.4);
-        }
-
-        .quiz-section.dark-mode .quiz-result {
-            color: #00bfa5;
-        }
-
-        .quiz-toggle {
-            display: block;
-            background: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 15px 40px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin: 30px auto;
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .quiz-toggle:hover {
-            transform: scale(1.05);
-            background: #66bb6a;
+            font-weight: 700;
+            text-align: center;
+            padding: 0 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
+        /* Responsividade */
         @media (max-width: 768px) {
+            .main {
+                flex-direction: column;
+                align-items: center;
+            }
+            
             h1 {
                 font-size: 2.5rem;
             }
@@ -720,313 +237,23 @@
             .subtitle {
                 font-size: 1.1rem;
             }
-            
-            .animals-container {
-                grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-                gap: 20px;
-            }
-            
-            .animal-card {
-                height: auto;
-            }
+        }
 
-            .animal-image {
-                height: 140px;
-            }
-
-            .english-name {
-                font-size: 1.4rem;
-            }
-
-            .portuguese-name {
-                font-size: 1.1rem;
-            }
-
-            .sound-icon {
-                width: 35px;
-                height: 35px;
-                font-size: 18px;
-            }
-
-            .quiz-options {
-                grid-template-columns: 1fr;
-            }
-
-            .quiz-image {
-                width: 200px;
-                height: 200px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            header {
-                padding: 15px 0;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            .subtitle {
-                font-size: 1rem;
-            }
-            .instructions {
-                padding: 15px;
-                font-size: 1rem;
-            }
-            .animals-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            .animal-image {
-                height: 120px;
-            }
-            .english-name {
-                font-size: 1.2rem;
-            }
-            .portuguese-name {
-                font-size: 1rem;
-            }
-            .sound-icon {
-                width: 30px;
-                height: 30px;
-                font-size: 16px;
-            }
-            footer {
-                padding: 20px;
-                font-size: 0.9rem;
-            }
-            .quiz-section {
-                padding: 20px;
-            }
-            .quiz-header {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .quiz-progress {
-                width: 100%;
-            }
-            .quiz-image {
-                width: 160px;
-                height: 160px;
-            }
-            .quiz-toggle {
-                padding: 12px 25px;
-                font-size: 1.1rem;
-            }
-        }
-            .quiz-question,
-.quiz-options {
-    color: #000 !important;
-}
-         /* Botão de alternância para o jogo */
-        .game-mode-toggle {
-            display: block;
-            background: #ff6f00;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 15px 40px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin: 30px auto;
-            box-shadow: 0 5px 15px rgba(255, 111, 0, 0.4);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .game-mode-toggle:hover {
-            transform: scale(1.05);
-            background: #ff6f00;
-            color: white;
-        }
-        
-        .game-mode-toggle i {
-            margin-right: 8px;
-        }
-        
-        /* Estilo para o jogo da memória */
-        .memory-game-container {
-            max-width: 900px;
-            margin: 0 auto 40px;
-            text-align: center;
-            display: none; /* Inicialmente oculto */
-        }
-        
-        .memory-title {
-            font-family: 'Fredoka', sans-serif;
-            color: #ff6f00;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            font-size: 2.5rem;
-        }
-        
-        .memory-game {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            perspective: 1000px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .memory-card {
-            width: 100%;
-            height: 150px;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.5s;
-            cursor: pointer;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .memory-card:active {
-            transform: scale(0.95);
-        }
-        
-        .memory-card.flipped {
-            transform: rotateY(180deg);
-        }
-        
-        .memory-card .front-face,
-        .memory-card .back-face {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 15px;
-            object-fit: cover;
-        }
-        
-        .memory-card .front-face {
-            transform: rotateY(180deg);
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .memory-card .front-face img {
-            width: 80%;
-            height: 80%;
-            object-fit: contain;
-        }
-        
-        .memory-card .back-face {
-            background: linear-gradient(45deg, #ff6f00, #ff8f00);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-        }
-        
-        .game-controls {
-            margin-top: 30px;
-        }
-        
-        .game-button {
-            background: linear-gradient(135deg, #ff6f00, #ff8f00);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 6px 15px rgba(255, 111, 0, 0.4);
-            transition: all 0.3s ease;
-        }
-        
-        .game-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(255, 111, 0, 0.6);
-        }
-        
-        .game-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            font-size: 1.2rem;
-            color: #333;
-            font-weight: bold;
-        }
-        
-        .game-info div {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 10px 20px;
-            border-radius: 10px;
-            min-width: 120px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .win-message {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            z-index: 200;
-            display: none;
-        }
-        
-        .win-message h3 {
-            font-size: 2.5rem;
-            color: #ff6f00;
-            margin-bottom: 20px;
-        }
-        
-        .win-message p {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-        }
-        
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 150;
-            display: none;
-        }
-        
-        @media (max-width: 768px) {
-            .memory-game {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .memory-card {
-                height: 120px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .memory-game {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-            
-            .memory-card {
-                height: 100px;
-            }
-            
-            .memory-title {
-                font-size: 2rem;
-            }
-        }
+        /*texto final centralizado*/
+        .footer-centralizado {
+        display: flex;
+     color: aliceblue;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
     </style>
 </head>
 <body>
-    <button class="dark-mode-toggle" id="darkModeToggle">
-        <i class="fas fa-moon"></i>
-    </button>
-    
     <div class="floating-animals">
         <div class="floating-animal">🐶</div>
         <div class="floating-animal">🐱</div>
@@ -1039,809 +266,62 @@
     </div>
     
     <header>
-        <h1>Aprendendo Inglês com Animais</h1>
-        <div class="subtitle">Clique nos animais para ouvir seus nomes em inglês e aprenda de forma divertida!</div>
+        <h1>Learning Inglês Básico</h1>
+        <div class="subtitle">Acesse as guias para ouvir os sons das palavras e aprenda inglês de forma divertida!</div>
     </header>
     
     <div class="instructions">
-        <p><i class="fas fa-star"></i> Olá, crianças! Bem-vindas ao mundo dos animais! <i class="fas fa-star"></i></p>
-        <p><i class="fas fa-hand-pointer"></i> Clique em qualquer animal para ouvir o nome dele em inglês!</p>
-        <p><i class="fas fa-book"></i> Aprenda os nomes em inglês e português de cada animal</p>
+        <p><i class="fas fa-book"></i> Este site tem como finalidade auxiliar no aprendizado básico da língua inglesa por meio da repetição de palavras e expressões do cotidiano. Com uma abordagem simples e didática, busca-se facilitar a memorização do vocabulário e promover o contato inicial com o idioma de forma acessível e progressiva.</p>
     </div>
     
-    <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
-    </div>
-    <div class ="progress-text">Seu progresso: <span id="progressText">0</span> de <span id="totalAnimals">40</span> animais descobertos!</div>
-
-    <div class="animals-container" id="animalsContainer">
-        <div class="spinner" id="loadingSpinner"></div>
-    </div>
-    
-    <button class="quiz-toggle" id="quizToggle">
-        <i class="fas fa-puzzle-piece"></i> Teste seu conhecimento!
-    </button>
-
-    <div class="quiz-section" id="quizSection" style="display: none;">
-        <div class="quiz-header">
-            <div class="quiz-title">Quiz: Selecione a forma correta da escrita em inglês</div>
-            <div class="quiz-progress">
-            <span id="progressText">0</span> / <span id="totalAnimals">10</span>
-                <div class="quiz-progress-bar" id="quizProgressBar"></div>
-            </div>
-        </div>
+    <div class="main">
+        <!-- Para Pronomes -->
         
-        <div class="quiz-content" id="quizContent">
-            <!-- Conteúdo do quiz será gerado dinamicamente -->
+    <a href="pronomes.html" style="text-decoration: none;">
+        <div class="card animate__animated animate__fadeInUp">
+            <img class="card-image" 
+                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLxbRzfj5SVk9cuQJ56qU6ERlGRKyuqqqFGg&s" 
+                 alt="Pronomes em inglês">
+            <div class="card-title">Pronomes</div>
+
         </div>
-    </div>
-    
-    <div class="celebrate" id="celebrate"></div>
+    </a>
 
-
-     <!-- Seção do jogo da memória -->
-      <button class="game-mode-toggle" id="gameModeToggle">
-    <i class="fas fa-gamepad"></i> Jogo da Memória
-</button>
-
-    <div class="memory-game-container" id="memoryGameContainer">
-        <h2 class="memory-title">Jogo da Memória dos Animais</h2>
-        <div class="memory-game" id="memoryGame"></div>
+    <!-- Para Cores -->
+    <a href="cores.html" style="text-decoration: none;">
+            <div class="card animate__animated animate__fadeInUp">
+            <img class="card-image" 
+                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlvGerabC4JvJWnWgwT1crjaIqgLRb2RrohA&s" 
+                 alt="Cores em inglês">
+            <div class="card-title">Cores</div>
+             </div>
+     </a>
         
-        <div class="game-info">
-            <div>Movimentos: <span id="moveCount">0</span></div>
-            <div>Pares: <span id="pairCount">0</span>/<span id="totalPairs">6</span></div>
-            <div>Tempo: <span id="timer">00:00</span></div>
+        <!-- Cartão 3: Animais -->
+        <a href="animais.html" style="text-decoration: none;">
+        <div class="card animate__animated animate__fadeInUp">
+        <img class="card-image" 
+             src="https://media.istockphoto.com/id/1445196818/pt/foto/group-of-cute-pets-on-white-background-banner-design.jpg?s=612x612&w=0&k=20&c=wly0obQ9hBS_e2fpH0FcY1kiNLqFlKxtnTQmpbHkbMI=" 
+             alt="Animais em inglês">
+        <div class="card-title">Animais</div>
         </div>
-        <div class="game-controls">
-            <button id="restartGame" class="game-button">Reiniciar Jogo</button>
-        </div>
-
-    <div class="animals-container" id="animalsContainer">
-        <div class="spinner" id="loadingSpinner"></div>
-    </div>
-    
-    <div class="celebrate" id="celebrate"></div>
-
-    <!-- Mensagem de vitória -->
-    <div class="overlay" id="overlay"></div>
-    <div class="win-message" id="winMessage">
-        <h3>Parabéns! 🎉</h3>
-        <p>Você completou o jogo da memória!</p>
-        <p><i class="fas fa-trophy"></i> Movimentos: <span id="finalMoves">0</span></p>
-        <p><i class="fas fa-clock"></i> Tempo: <span id="finalTime">00:00</span></p>
-        <button id="playAgain" class="game-button">Jogar Novamente</button>
-    
-    
-    <footer>
-        <p>Site educativo para introdução do inglês na educação infantil</p>
-        <p>© 2025 Aprendendo pronunciar os nomes dos animais em inglês </p>
-    </footer>
-    
-    <div class="help-button" id="helpButton">
-        <i class="fas fa-question"></i>
-    </div>
-    <div class="help-message" id="helpMessage">
-        Clique em qualquer animal para ouvir seu nome em inglês! O animal selecionado terá uma borda verde ao redor do cartão.
+        </a>
     </div>
 
+   <footer class="footer-centralizado">
+    <div>
+        <p style="font-size:1.3rem; font-weight:bold; margin-bottom:8px;">
+            Site educativo para introdução do inglês na educação infantil
+        </p>
+        <p style="font-size:1.1rem;">
+            © 2025 Aprendendo com repetições | Desenvolvido com ❤️ para crianças curiosas
+        </p>
+    </div>
+</footer>
     
-
     <script>
-        // Dados dos animais
-        const animals = [
-            { english: "Dog", portuguese: "Cachorro", image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400" },
-            { english: "Cat", portuguese: "Gato", image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400" },
-            { english: "Cow", portuguese: "Vaca", image: "https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400" },
-            { english: "Rabbit", portuguese: "Coelho", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Oryctolagus_cuniculus_Tasmania_2_%28cropped%29.jpg/250px-Oryctolagus_cuniculus_Tasmania_2_%28cropped%29.jpg" },
-            { english: "Hamster", portuguese: "Hamster", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqcYWs_fpD37jAvx-gqTeJ1l_JTSV8y6VaxUPbST4imods915XiQtDX6d1&s=10"},
-            { english: "Fish", portuguese: "Peixe", image: "https://images.unsplash.com/photo-1535591273668-578e31182c4f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjM2NTI5fQ" },
-            { english: "Bird", portuguese: "Pássaro", image: "https://images.unsplash.com/photo-1552727451-6f5671e14d83?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400" },
-            { english: "Chicken", portuguese: "Galinha", image: "https://organicfeeds.com/wp-content/uploads/2022/09/01-Most-Popular-Breeds-of-Chickens-2.jpg" },
-            { english: "Rooster", portuguese: "Galo", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAzj5G08c9l-Z1fYsUD4P2xSAn4yhwJH4sPV5FhAMr4aLS-XzoY4FUHDA4&s=10" },
-            { english: "Mouse", portuguese: "Rato", image: "https://landrin.com.br/upload/pragas_5_66_1538744895.jpg" },
-            { english: "Frog", portuguese: "Sapo", image: "https://www.nps.gov/articles/000/images/cascades-frog-Gary-Nafis-CalHerps-permission.jpg?maxwidth=1300&autorotate=false" },
-            { english: "Parrot", portuguese: "Papagaio", image: "https://as2.ftcdn.net/jpg/01/09/39/73/1000_F_109397389_huBYRiES0sAHsYBHuo7XU9aRvD0I73if.jpg" },
-            { english: "Duck", portuguese: "Pato", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrWPpXfC9d6MI5cDgEIVvqc7sIJmVciavSdeEO4QLKg-MRzq-cfmgky-kO&s=10" },
-            { english: "Turkey", portuguese: "Peru", image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgp5ZvOwdjIwlm_KcdwnOEgZNnjooEBVnAktBsnTTLAtPYazbS4PrG4H_qqnzkmhn99xLEaRg_Owl2UxaPx2znfVXk6sN9FvT2eACU4v7KVgb7-MH6q8rU52xG6q6fWdDrkiZQppFIJZl0ZYfqd6VccoA2LKnXRsMF8Pj_6tDzpy65oW6pdjbENqS14/s1920/perus-aves-fatos-e-curiosidades-curioteca-1.jpg" },
-            { english: "Pig", portuguese: "Porco", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwD5Upkbf33gf1z6A19bj0v2jsLb6uBKOPWJmcTVjXopN7Z0BJkvRSTJ0&s=10" },
-            { english: "Sheep", portuguese: "Ovelha", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Lleyn_sheep.jpg/960px-Lleyn_sheep.jpg" },
-            { english: "Deer", portuguese: "Veado", image: "https://media.istockphoto.com/id/497995978/pt/foto/veado-campeiro-no-parque-nacional-da-serra-da-canastra-brasil.jpg?s=612x612&w=0&k=20&c=8Q8jQNGAk0wac4QC9eErp9mo-8iORyFZgNyY6yLVGcE=" },
-            { english: "Horse", portuguese: "Cavalo", image: "https://yumove.co.uk/cdn/shop/articles/custom_resized_f30ef82c-c32b-4b5f-aab2-7ae103e9c7cf.jpg?v=1742568467&width=1240" },
-            { english: "Donkey", portuguese: "Burro", image: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Burro_-_Red_Rock_Canyon_National_Conservation_Area_%2818030880416%29.2.jpg" },
-            { english: "Lion", portuguese: "Leão", image: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400" },
-            { english: "Monkey", portuguese: "Macaco", image: "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400" },
-            { english: "Elephant", portuguese: "Elefante", image: "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400" },
-            { english: "Tiger", portuguese: "Tigre", image: "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400" },
-            { english: "Bear", portuguese: "Urso", image: "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400" },
-            { english: "Fox", portuguese: "Raposa", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoS9s3Vf-jbwWImkvl49IfJ4pLrU05FEwCY0rNdc6IP-N0txuUIwq2EMU&s=10" },
-            { english: "Wolf", portuguese: "Lobo", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Eurasian_wolf_2.jpg/960px-Eurasian_wolf_2.jpg" },
-            { english: "Owl", portuguese: "Coruja", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsciM7P0lLq967I1f5OgHV-iqvrP3qFXTeoedQ22cWTqn6Id_9Z-jNVhQ&s=10" },
-            { english: "Dolphin", portuguese: "Golfinho", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4c5Gne9HmoTIoG3Jpv0K6gQMFyGnRncX0NCLZvVLJIhUhKSuCNFDVd6Bn&s=10" },
-            { english: "Shark", portuguese: "Tubarão", image: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=400" },
-            { english: "Whale", portuguese: "Baleia", image: "https://nautica.com.br/wp-content/uploads/2024/02/baleias-andavam.bx_.jpg" },
-            { english: "Turtle", portuguese: "Tartaruga", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnzE_hCAKpsM30q7YiK20azyOmDN_05db-1PMHKHRLdXhBiFqLSGtIqHc&s=10" },
-            { english: "Octopus", portuguese: "Polvo", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReWRXkj2uX8SbGzhZv_k5UBrhjaEWC9xUEeebuNu8kpRz_5Fet4SZiBFg&s=10" },
-            { english: "Starfish", portuguese: "Estrela-do-mar", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT--9M00yhyITl0qIAWBbj9Xu_XHnjPF4s0Qg&s" },
-            { english: "Lobster", portuguese: "Lagosta", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUskN_H0YP_CSv3CjlO1FPV5BMHb-G6iazaQ&s" },
-            { english: "Crab", portuguese: "Caranguejo", image: "data:image/jpeg;base64,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" },
-            { english: "Seal", portuguese: "Foca", image: "data:image/jpeg;base64,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" },
-            { english: "Giraffe", portuguese: "Girafa", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYJ89NQjGws3_WSCPksfJh7W7QuiFaGVo1CTZhvkvk98tbjYDecwcxWCQ&s=10" },
-            { english: "Zebra", portuguese: "Zebra", image: "https://upload.wikimedia.org/wikipedia/commons/4/45/Equus_quagga_burchellii_-_Etosha%2C_2014.jpg" },
-            { english: "Kangaroo", portuguese: "Canguru", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtErCwayiFA4017eQEutOK_P9VawDSysKhtooDDRQDPCC8lE1VJVzLJS2Y&s=10" },
-            { english: "Penguin", portuguese: "Pinguim", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBUpQtRM8QlPgaNBlwATmik8R6OuMIEf45GeQ6vvUGC4-KxY6oQLXg5UHR&s=10" }
-        ]
-        // Variáveis globais
-        let discoveredAnimals = new Set();
-        let lastSelectedCard = null;
-        
-        // Variáveis para o quiz
-        let quizQuestions = [];
-        let currentQuestionIndex = 0;
-        let quizScore = 0;
-        let quizActive = false;
-
-        // Variáveis para o jogo da memória
-        let flippedCards = [];
-        let matchedPairs = 0;
-        let lockBoard = false;
-        let moveCount = 0;
-        let seconds = 0;
-        let minutes = 0;
-        let memoryCards = [];
-        let gameTimer = null;
-        
-        // Função para criar os cartões dos animais
-        function createAnimalCards() {
-            const container = document.getElementById('animalsContainer');
-            const spinner = document.getElementById('loadingSpinner');
-            
-            spinner.style.display = 'block';
-            container.innerHTML = '';
-            
-            document.getElementById('totalAnimals').textContent = animals.length;
-            
-            setTimeout(() => {
-                spinner.style.display = 'none';
-                
-                animals.forEach(animal => {
-                    const card = document.createElement('div');
-                    card.className = 'animal-card';
-                    card.dataset.animal = animal.english; 
-                    
-                    // ADICIONAR CLASSE PARA BORDA VERMELHA SE NÃO DESCOBERTO
-                    if (!discoveredAnimals.has(animal.english)) {
-                        card.classList.add('not-discovered');
-                    }
-                    
-                    if (discoveredAnimals.has(animal.english)) {
-                        card.classList.add('animate__animated', 'animate__pulse');
-                    }
-                    
-                    card.onclick = () => {
-                        if (lastSelectedCard) {
-                            lastSelectedCard.classList.remove('selected');
-                        }
-                        
-                        card.classList.add('selected');
-                        lastSelectedCard = card;
-                        
-                        playAnimalName(animal.english);
-                        if (!discoveredAnimals.has(animal.english)) {
-                            discoveredAnimals.add(animal.english);
-                            updateProgress();
-                            card.classList.add('animate__animated', 'animate__tada');
-                            
-                            // REMOVER A BORDA VERMELHA AO SER CLICADO
-                            card.classList.remove('not-discovered');
-                            
-                            setTimeout(() => {
-                                card.classList.remove('animate__tada');
-                            }, 1000);
-                            
-                            if (discoveredAnimals.size === animals.length) {
-                                celebrate();
-                            }
-                        }
-                    };
-                    const image = document.createElement('img');
-                    image.className = 'animal-image';
-                    image.src = animal.image;
-                    image.alt = animal.english;
-                    image.loading = "lazy";
-                    
-                    image.onerror = function() {
-                        this.src = 'https://via.placeholder.com/400x400?text=Animal+Image';
-                    };
-                    
-                    const names = document.createElement('div');
-                    names.className = 'animal-names';
-                    
-                    const english = document.createElement('div');
-                    english.className = 'english-name';
-                    english.textContent = animal.english;
-                    
-                    const portuguese = document.createElement('div');
-                    portuguese.className = 'portuguese-name';
-                    portuguese.textContent = animal.portuguese;
-                    
-                    const soundIcon = document.createElement('div');
-                    soundIcon.className = 'sound-icon';
-                    soundIcon.innerHTML = '<i class="fas fa-volume-up"></i>';
-                    
-                    names.appendChild(english);
-                    names.appendChild(portuguese);
-                    
-                    card.appendChild(image);
-                    card.appendChild(names);
-                    card.appendChild(soundIcon);
-                    
-                    container.appendChild(card);
-                });
-            }, 800);
-        }
-        
-        // Função para reproduzir o NOME do animal em inglês
-        function playAnimalName(name) {
-            if ('speechSynthesis' in window) {
-                const utterance = new SpeechSynthesisUtterance(name);
-                utterance.lang = 'en-US';
-                
-                let voices = window.speechSynthesis.getVoices();
-                let englishVoice = voices.find(voice => voice.lang === 'en-US' || voice.lang === 'en-GB');
-                if (englishVoice) {
-                    utterance.voice = englishVoice;
-                    utterance.rate = 0.7;
-                    
-                }
-                
-                window.speechSynthesis.speak(utterance);
-            } else {
-                console.error("SpeechSynthesis API não suportada neste navegador.");
-                alert("Seu navegador não suporta a função de leitura de texto. Por favor, tente em outro navegador.");
-            }
-        }
-        
-        // Atualizar barra de progresso
-        function updateProgress() {
-            const progress = (discoveredAnimals.size / animals.length) * 100;
-            const progressBar = document.getElementById('progressBar');
-            const progressText = document.getElementById('progressText');
-            
-            progressBar.style.width = `${progress}%`;
-            progressText.textContent = discoveredAnimals.size;
-        }
-        
-        // Celebração quando todas as imagens são descobertas
-        function celebrate() {
-            const celebrateDiv = document.getElementById('celebrate');
-            celebrateDiv.style.display = 'block';
-            
-            for (let i = 0; i < 150; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = `${Math.random() * 100}vw`;
-                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
-                confetti.style.animationDelay = `${Math.random() * 2}s`;
-                confetti.style.width = `${Math.random() * 10 + 5}px`;
-                confetti.style.height = `${Math.random() * 10 + 5}px`;
-                celebrateDiv.appendChild(confetti);
-            }
-            
-            const audio = new Audio('https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3');
-            audio.play();
-            
-            setTimeout(() => {
-                celebrateDiv.style.display = 'none';
-                celebrateDiv.innerHTML = '';
-            }, 5000);
-        }
-        
-        // Modo escuro
-        function setupDarkMode() {
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const body = document.body;
-            
-            darkModeToggle.addEventListener('click', () => {
-                body.classList.toggle('dark-mode');
-                
-                if (body.classList.contains('dark-mode')) {
-                    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                } else {
-                    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                }
-            });
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                body.classList.add('dark-mode');
-                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            }
-        }
-        
-        // Configurar botão de ajuda
-        function setupHelpButton() {
-            const helpButton = document.getElementById('helpButton');
-            const helpMessage = document.getElementById('helpMessage');
-            
-            helpButton.addEventListener('click', () => {
-                helpMessage.style.display = helpMessage.style.display === 'block' ? 'none' : 'block';
-            });
-            
-            document.addEventListener('click', (e) => {
-                if (!helpButton.contains(e.target) && !helpMessage.contains(e.target)) {
-                    helpMessage.style.display = 'none';
-                }
-            });
-        }
-        
-        // Funções para o Quiz com 4 opções
-        function generateQuizQuestions() {
-            quizQuestions = [];
-            
-            const shuffledAnimals = [...animals].sort(() => Math.random() - 0.5);
-            
-            for (let i = 0; i < 10; i++) {
-                const animal = shuffledAnimals[i];
-                
-                // Gerar três palavras incorretas
-                const incorrectOptions = [];
-                while (incorrectOptions.length < 3) {
-                    const incorrectOption = generateIncorrectSpelling(animal.english);
-                    // Evitar duplicatas
-                    if (incorrectOption !== animal.english && !incorrectOptions.includes(incorrectOption)) {
-                        incorrectOptions.push(incorrectOption);
-                    }
-                }
-                
-                // Criar a pergunta com 4 opções
-                quizQuestions.push({
-                    animal: animal,
-                    options: [animal.english, ...incorrectOptions],
-                    correctOption: animal.english
-                });
-            }
-        }
-        
-        function generateIncorrectSpelling(word) {
-            // Gerar uma versão incorreta da palavra com erros comuns
-            const errors = [
-                () => word.slice(0, -1), // Remover última letra
-                () => word + "e", // Adicionar 'e' no final
-                () => word.replace(/e/g, 'i').replace(/i/g, 'e'), // Trocar e/i
-                () => word.replace(/o/g, 'u').replace(/u/g, 'o'), // Trocar o/u
-                () => word.split('').sort(() => 0.5 - Math.random()).join(''), // Embaralhar letras
-                () => word.replace(/([aeiou])/g, (match) => 
-                    match === 'a' ? 'e' : 
-                    match === 'e' ? 'i' : 
-                    match === 'i' ? 'o' : 
-                    match === 'o' ? 'u' : 
-                    match === 'u' ? 'a' : match
-                ) // Trocar vogais
-            ];
-            
-            // Selecionar um método aleatório de erro
-            const errorMethod = errors[Math.floor(Math.random() * errors.length)];
-            return errorMethod();
-        }
-        
-        function showQuizQuestion() {
-            const quizContent = document.getElementById('quizContent');
-            const quizProgressBar = document.getElementById('quizProgressBar');
-            const question = quizQuestions[currentQuestionIndex];
-            
-            // Atualizar barra de progresso do quiz
-            quizProgressBar.style.width = `${(currentQuestionIndex / quizQuestions.length) * 100}%`;
-            
-            // Embaralhar as opções
-            const shuffledOptions = [...question.options].sort(() => Math.random() - 0.5);
-            
-            // Construir o HTML da pergunta com 4 opções
-            quizContent.innerHTML = `
-                <img src="${question.animal.image}" alt="${question.animal.english}" class="quiz-image">
-                <p class="quiz-question">Como se escreve <strong>${question.animal.portuguese}</strong> em inglês?</p>
-                <div class="quiz-options">
-                    ${shuffledOptions.map(option => `
-                        <div class="quiz-option" data-option="${option}">${option}</div>
-                    `).join('')}
-                </div>
-                <div class="quiz-feedback" id="quizFeedback"></div>
-                <button class="quiz-next" id="quizNext" style="display: none;">Próxima Pergunta</button>
-            `;
-            
-            // Adicionar event listeners para as opções
-            document.querySelectorAll('.quiz-option').forEach(option => {
-                option.addEventListener('click', () => {
-                    if (quizActive) {
-                        checkAnswer(option.dataset.option, question.correctOption);
-                    }
-                });
-            });
-            
-            // Adicionar event listener para o botão de próxima pergunta
-            document.getElementById('quizNext')?.addEventListener('click', nextQuestion);
-            
-            quizActive = true;
-        }
-
-        function updateQuizProgress() {
-    document.querySelector('#quizSection #progressText').textContent = quizScore;
-    document.querySelector('#quizSection #totalAnimals').textContent = quizQuestions.length;
-}
-        
-        function checkAnswer(selectedOption, correctOption) {
-            quizActive = false;
-            const options = document.querySelectorAll('.quiz-option');
-            const feedback = document.getElementById('quizFeedback');
-            
-            options.forEach(option => {
-                if (option.dataset.option === correctOption) {
-                    option.classList.add('correct');
-                } else if (option.dataset.option === selectedOption) {
-                    option.classList.add('incorrect');
-                }
-                
-                // Desativar cliques adicionais
-                option.style.pointerEvents = 'none';
-            });
-            
-            // Atualizar pontuação se necessário
-            if (selectedOption === correctOption) {
-                feedback.textContent = "Correto! Parabéns! 🎉";
-                feedback.style.color = "#4CAF50";
-                quizScore++;
-                
-                // Tocar som de acerto
-                const correctSound = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
-                correctSound.play();
-            } else {
-                feedback.textContent = `Ops! A resposta correta é: ${correctOption}`;
-                feedback.style.color = "#f44336";
-                
-                // Tocar som de erro
-                const wrongSound = new Audio('https://www.soundjay.com/buttons/sounds/button-10.mp3');
-                wrongSound.play();
-            }
-            
-            // Mostrar o botão de próxima pergunta
-            document.getElementById('quizNext').style.display = 'block';
-        }
-        
-        function nextQuestion() {
-            currentQuestionIndex++;
-            
-            if (currentQuestionIndex < quizQuestions.length) {
-                showQuizQuestion();
-            } else {
-                showQuizResults();
-            }
-        }
-        function showQuizResults() {
-            const quizContent = document.getElementById('quizContent');
-            const quizProgressBar = document.getElementById('quizProgressBar');
-            
-            // Atualizar barra de progresso para 100%
-            quizProgressBar.style.width = '100%';
-            
-            // Calcular a pontuação
-            const scorePercentage = Math.round((quizScore / quizQuestions.length) * 100);
-            
-            // Mensagem personalizada baseada na pontuação
-            let message;
-            if (scorePercentage >= 90) {
-                message = "Incrível! Você é um expert em animais! 🏆";
-            } else if (scorePercentage >= 70) {
-                message = "Muito bom! Você conhece bem os animais! 👍";
-            } else if (scorePercentage >= 50) {
-                message = "Bom trabalho! Continue praticando! 💪";
-            } else {
-                message = "Continue estudando! Você vai melhorar! 🌟";
-            }
-            
-            // Construir o HTML dos resultados
-            quizContent.innerHTML = `
-                <div class="quiz-result">Resultado do Quiz</div>
-                <div class="quiz-score">Sua pontuação: ${quizScore} de ${quizQuestions.length}</div>
-                <div class="quiz-message">${message}</div>
-                <button class="quiz-restart" id="quizRestart">Jogar Novamente</button>
-            `;
-            
-            // Adicionar event listener para o botão de reiniciar
-            document.getElementById('quizRestart').addEventListener('click', startQuiz);
-            
-            // Celebrar se pontuação for alta
-            if (scorePercentage >= 80) {
-                celebrate();
-            }
-        }
-        
-        function startQuiz() {
-            // Gerar novas perguntas
-            generateQuizQuestions();
-            
-            // Resetar variáveis do quiz
-            currentQuestionIndex = 0;
-            quizScore = 0;
-            quizActive = true;
-            
-            // Mostrar a primeira pergunta
-            showQuizQuestion();
-            
-            // Mostrar a seção do quiz
-            document.getElementById('quizSection').style.display = 'block';
-            
-            // Rolar para a seção do quiz
-            document.getElementById('quizSection').scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        function setupQuizToggle() {
-            const quizToggle = document.getElementById('quizToggle');
-            const quizSection = document.getElementById('quizSection');
-            
-            quizToggle.addEventListener('click', () => {
-                if (quizSection.style.display === 'none') {
-                    startQuiz();
-                } else {
-                    quizSection.style.display = 'none';
-                    quizToggle.textContent = 'Mostrar Quiz';
-                }
-            });
-        }
-        
-        // Funções para o jogo da memória
-        
-        // Função para alternar entre os modos
-        function toggleGameMode() {
-            const gameModeToggle = document.getElementById('gameModeToggle');
-            const animalsContainer = document.getElementById('animalsContainer');
-            const memoryGameContainer = document.getElementById('memoryGameContainer');
-            const progressContainer = document.querySelector('.progress-container');
-            const progressText = document.querySelector('.progress-text');
-            
-            if (memoryGameContainer.style.display === 'none') {
-                // Mudar para o modo jogo da memória
-                memoryGameContainer.style.display = 'block';
-                animalsContainer.style.display = 'none';
-                progressContainer.style.display = 'none';
-                progressText.style.display = 'none';
-                gameModeToggle.innerHTML = '<i class="fas fa-book"></i> Modo Aprendizado';
-                initMemoryGame();
-            } else {
-                // Voltar para o modo aprendizado
-                memoryGameContainer.style.display = 'none';
-                animalsContainer.style.display = 'grid';
-                progressContainer.style.display = 'block';
-                progressText.style.display = 'block';
-                gameModeToggle.innerHTML = '<i class="fas fa-gamepad"></i> Jogo da Memória';
-                clearInterval(gameTimer);
-            }
-        }
-        
-        // Função para inicializar o jogo da memória
-        function initMemoryGame() {
-            const memoryGame = document.getElementById('memoryGame');
-            memoryGame.innerHTML = '';
-            flippedCards = [];
-            matchedPairs = 0;
-            lockBoard = false;
-            moveCount = 0;
-            seconds = 0;
-            minutes = 0;
-            
-            // Atualizar contadores
-            document.getElementById('moveCount').textContent = moveCount;
-            document.getElementById('pairCount').textContent = matchedPairs;
-            document.getElementById('timer').textContent = '00:00';
-            
-            // Criar pares de cartas (vamos usar 6 pares para 12 cartas)
-            // Criar pares de cartas (agora selecionando 6 animais aleatórios)
-            const shuffledAnimals = [...animals].sort(() => Math.random() - 0.5);
-            const selectedAnimals = shuffledAnimals.slice(0, 8);
-            memoryCards = [...selectedAnimals, ...selectedAnimals]; // Duplica para formar pares
-
-            
-            // Embaralhar as cartas
-            shuffleCards();
-            
-            // Criar as cartas no DOM
-            memoryCards.forEach((animal, index) => {
-    const card = document.createElement('div');
-    card.className = 'memory-card';
-    card.dataset.index = index;
-    card.dataset.animal = animal.english; // Corrigido aqui!
-
-    const backFace = document.createElement('div');
-    backFace.className = 'back-face';
-    backFace.innerHTML = '<i class="fas fa-paw"></i>';
-
-    const frontFace = document.createElement('div');
-    frontFace.className = 'front-face';
-    const img = document.createElement('img');
-    img.src = animal.image;
-    img.alt = animal.english;
-    frontFace.appendChild(img);
-
-    card.appendChild(backFace);
-    card.appendChild(frontFace);
-
-    card.addEventListener('click', flipCard);
-
-    memoryGame.appendChild(card);
-
-        });
-
-        document.querySelectorAll('.memory-card').forEach(card => card.classList.add('flipped'));
-        setTimeout(() => {
-        document.querySelectorAll('.memory-card').forEach(card => card.classList.remove('flipped'));
-        }, 1000);
-            
-            // Atualizar total de pares
-            document.getElementById('totalPairs').textContent = memoryCards.length / 2;
-            
-            // Iniciar o cronômetro
-            startTimer();
-        }
-        
-        // Embaralhar as cartas (algoritmo Fisher-Yates)
-        function shuffleCards() {
-            for (let i = memoryCards.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [memoryCards[i], memoryCards[j]] = [memoryCards[j], memoryCards[i]];
-            }
-        }
-        
-        // Função para virar a carta
-        function flipCard() {
-            if (lockBoard) return;
-            if (this.classList.contains('flipped')) return; // Não permitir clicar duas vezes na mesma carta
-            
-            this.classList.add('flipped');
-            flippedCards.push(this);
-            
-            if (flippedCards.length === 2) {
-                lockBoard = true;
-                moveCount++;
-                document.getElementById('moveCount').textContent = moveCount;
-                checkForMatch();
-            }
-        }
-        
-        // Verificar se as cartas viradas formam um par
-        function checkForMatch() {
-            const card1 = flippedCards[0];
-            const card2 = flippedCards[1];
-            const isMatch = card1.dataset.animal === card2.dataset.animal;
-            
-            if (isMatch) {
-            disableCards();
-            matchedPairs++;
-            document.getElementById('pairCount').textContent = matchedPairs;
-
-            // Som de acerto
-            const correctSound = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
-            correctSound.play();
-
-            // Barra de pares verde por 1 segundo
-            const pairInfo = document.querySelector('.game-info div:nth-child(2)');
-             if (pairInfo) {
-            pairInfo.style.background = '#4CAF50';
-            pairInfo.style.color = 'white';
-            setTimeout(() => {
-            pairInfo.style.background = '';
-            pairInfo.style.color = '';
-            }, 1000);
-         }
-
-    // Tocar som do animal quando encontrar um par
-    playAnimalSound(card1.dataset.animal);
-
-    if (matchedPairs === memoryCards.length / 2) {
-        clearInterval(gameTimer);
-        setTimeout(showWinMessage, 500);
-    }
-} else {
-    unflipCards();
-}
-        }
-
-        function setupGameButtons() {
-            // Botão para reiniciar o jogo
-            document.getElementById('restartGame').addEventListener('click', () => {
-                initMemoryGame();
-            });
-        }
-        
-        // Desabilitar cartas quando formam um par
-        function disableCards() {
-            flippedCards[0].removeEventListener('click', flipCard);
-            flippedCards[1].removeEventListener('click', flipCard);
-            resetBoard();
-        }
-        
-        // Virar as cartas de volta se não formarem par
-        function unflipCards() {
-            setTimeout(() => {
-                flippedCards[0].classList.remove('flipped');
-                flippedCards[1].classList.remove('flipped');
-                resetBoard();
-            }, 1000);
-        }
-        
-        // Resetar o tabuleiro após cada jogada
-        function resetBoard() {
-            [lockBoard, flippedCards] = [false, []];
-        }
-        
-        // Iniciar o cronômetro do jogo
-        function startTimer() {
-            clearInterval(gameTimer);
-            gameTimer = setInterval(() => {
-                seconds++;
-                if (seconds === 60) {
-                    minutes++;
-                    seconds = 0;
-                }
-                document.getElementById('timer').textContent = 
-                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            }, 1000);
-        }
-        
-        // Mostrar mensagem de vitória
-        // Mostrar mensagem de vitória
-    function showWinMessage() {
-    const winMessage = document.getElementById('winMessage');
-    const overlay = document.getElementById('overlay');
-
-    document.getElementById('finalMoves').textContent = moveCount;
-    document.getElementById('finalTime').textContent =
-        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-    overlay.style.display = 'block';
-    winMessage.style.display = 'block';
-
-    // Tocar som de vitória
-    const audio = new Audio('https://www.soundjay.com/misc/sounds/magic-chime-01.mp3');
-    audio.play();
-
-    // Adicionar event listener sempre que mostrar a mensagem
-    document.getElementById('playAgain').onclick = () => {
-        overlay.style.display = 'none';
-        winMessage.style.display = 'none';
-        initMemoryGame();
-    };
-    document.getElementById('exitGame').onclick = () => {
-        overlay.style.display = 'none';
-        winMessage.style.display = 'none';
-        document.getElementById('memoryGameContainer').style.display = 'none';
-        document.getElementById('animalsContainer').style.display = 'grid';
-        document.querySelector('.progress-container').style.display = 'block';
-        document.querySelector('.progress-text').style.display = 'block';
-        document.getElementById('gameModeToggle').innerHTML = '<i class="fas fa-gamepad"></i> Jogo da Memória';
-        clearInterval(gameTimer);
-    };
-}
-        
-            // Botão para jogar novamente na mensagem de vitória
-            {
-            document.getElementById('playAgain').addEventListener('click', () => {
-                document.getElementById('overlay').style.display = 'none';
-                document.getElementById('winMessage').style.display = 'none';
-                initMemoryGame();
-            });
-        }
-        
-       
-            // Configurar o botão de alternância do jogo
-            document.getElementById('gameModeToggle').addEventListener('click', toggleGameMode);
-         
-        // Inicializar o site quando a página carregar
-            window.onload = () => {
-            createAnimalCards();
-            updateProgress();
-            setupDarkMode();
-            setupHelpButton();
-            setupQuizToggle();
-            setupGameButtons();
-            
-            // Configurar animais flutuantes
+        // Animação dos animais flutuantes (mantida do original)
+        window.onload = () => {
             const floatingContainer = document.querySelector('.floating-animals');
             for (let i = 0; i < 12; i++) {
                 const animal = document.createElement('div');
