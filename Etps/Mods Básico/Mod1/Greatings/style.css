@@ -22,6 +22,30 @@ body {
     align-items: center;
 }
 
+/* Proteção global de imagens (Evita arrastar e selecionar) */
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Proteção de Mídia (Oculta botão de download nos controles) */
+video::-webkit-media-controls-download-button,
+audio::-webkit-media-controls-download-button {
+    display: none !important;
+}
+
+video::-webkit-media-controls-enclosure,
+audio::-webkit-media-controls-enclosure {
+    /* Esconde o menu '...' que pode conter a opção de download */
+    overflow: hidden;
+}
+
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -57,7 +81,7 @@ body {
     padding: 30px;
     box-shadow: 0 15px 35px var(--shadow-color);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition:(0.3s, color 0.3s);
+    transition: all 0.3s, color 0.3s;
     position: relative; /* Necessário para posicionar o botão de voltar */
 }
 

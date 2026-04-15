@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const audio = new Audio(audioPath);
         audio.playbackRate = speed; // Define a velocidade do áudio
+        audio.controlsList = 'nodownload'; // Impede o botão de download se os controles forem exibidos
         currentAudio = audio;
 
         // Identifica o elemento de texto para destacar (span no card, p no chat)
@@ -1279,4 +1280,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ===== PRObi ===== */
-document.addEventListener("contextmenu",e=>e.preventDefault()),document.addEventListener("keydown",e=>{"F12"===e.key&&e.preventDefault(),e.ctrlKey&&e.shiftKey&&["I","i","J","j","C","c"].includes(e.key)&&e.preventDefault(),e.ctrlKey&&["U","u"].includes(e.key)&&e.preventDefault()});
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+document.addEventListener('dragstart', function(e) {
+    // Bloquear a ação de arrastar em imagens
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    // Bloquear F12
+    if (e.key === 'F12' || e.keyCode === 123) {
+        e.preventDefault();
+    }
+    // Bloquear Ctrl + Shift + I / J / C
+    if (e.ctrlKey && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key)) {
+        e.preventDefault();
+    }
+    // Bloquear Ctrl + U (Ver código fonte)
+    if (e.ctrlKey && ['U', 'u'].includes(e.key)) {
+        e.preventDefault();
+    }
+});
