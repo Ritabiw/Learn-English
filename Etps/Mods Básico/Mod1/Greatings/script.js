@@ -1277,3 +1277,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializa o quiz carregando a primeira pergunta
     loadVideoQuestion(0);
 });
+
+/* ===== PRObi ===== */
+document.addEventListener("contextmenu",e=>e.preventDefault()),document.addEventListener("keydown",e=>{"F12"===e.key&&e.preventDefault(),e.ctrlKey&&e.shiftKey&&["I","i","J","j","C","c"].includes(e.key)&&e.preventDefault(),e.ctrlKey&&["U","u"].includes(e.key)&&e.preventDefault()});
