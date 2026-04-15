@@ -25,6 +25,30 @@
     box-sizing: border-box;
 }
 
+/* Proteção global de imagens (Evita arrastar e selecionar) */
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Proteção de Mídia (Oculta botão de download nos controles) */
+video::-webkit-media-controls-download-button,
+audio::-webkit-media-controls-download-button {
+    display: none !important;
+}
+
+video::-webkit-media-controls-enclosure,
+audio::-webkit-media-controls-enclosure {
+    /* Esconde o menu '...' que pode conter a opção de download */
+    overflow: hidden;
+}
+
 body {
     font-family: var(--font-main);
     background: var(--bg-color);
