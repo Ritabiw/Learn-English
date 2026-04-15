@@ -29,3 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleBtn.textContent = currentlyDark ? '☀️' : '🌙';
     });
 });
+
+/* ===== PROTEÇÃO DE CÓDIGO ===== */
+document.addEventListener("contextmenu",e=>e.preventDefault()),document.addEventListener("keydown",e=>{"F12"===e.key&&e.preventDefault(),e.ctrlKey&&e.shiftKey&&["I","i","J","j","C","c"].includes(e.key)&&e.preventDefault(),e.ctrlKey&&["U","u"].includes(e.key)&&e.preventDefault()});
