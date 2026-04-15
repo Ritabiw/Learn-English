@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Módulo 1: Greetings - Aprenda Inglês</title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Botão Voltar ao Início (Greetings) -->
+        <a href="../Mod1.html" class="back-arrow" title="Voltar ao Início">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5"></path>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </a>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <header>
+
+            <!-- Passo 1: Greetings -->
+            <div id="step-1" class="step">
+                <div class="module-tag">Módulo 1</div>
+                <h1>Greetings! 👋</h1>
+                <!-- From Uiverse.io by JkHuger --> 
+        <label for="theme" class="theme">
+	        <span class="theme__toggle-wrap">
+		        <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
+		        <span class="theme__fill"></span>
+		        <span class="theme__icon">
+			        <span class="theme__icon-part"></span>
+			        <span class="theme__icon-part"></span>
+			        <span class="theme__icon-part"></span>
+			        <span class="theme__icon-part"></span>
+			        <span class="theme__icon-part"></span>
+			        <span class="theme__icon-part"></span>
+			        <span class="theme__icon-part"></span>
+			        <span class="theme__icon-part"></span>
+			        <span class="theme__icon-part"></span>
+		        </span>
+	        </span>
+        </label>
+
+                <!-- Área do Vídeo -->
+                <div class="video-container">
+                    <video autoplay muted loop playsinline style="pointer-events: none;">
+                        <source src="Imagens de Greetins/Design sem nome.mp4" type="video/mp4">
+                        Seu navegador não suporta a reprodução de vídeos.
+                    </video>
+                </div>
+
+                <p>Greetings significa saudações em inglês. São palavras e expressões usadas para cumprimentar alguém, iniciar uma conversa ou se despedir.</p>
+                <h3>🎯 Por que aprender greetings é importante? </h3>
+
+                <h3>Primeiro contato</h3>
+                <p>As saudações são a primeira coisa que falamos ao conhecer alguém. Elas causam a primeira impressão.</p>
+
+                <h3>Educação e respeito </h3>   
+                <p> Cumprimentar alguém demonstra educação, respeito e simpatia.</p>
+
+                <h3>Comunicação internacional</h3>
+                <p>O inglês é considerado a língua global. Saber cumprimentar em inglês ajuda em:</p>
+                <p>Viagens ✈️</p>
+                <p>Escola 📚</p>
+                <p>Trabalho 💼</p>
+                <p>Internet 🌎</p>
+
+                <h3>Base para aprender inglês</h3>
+                <p>As saudações são o primeiro passo no aprendizado da língua. A partir delas, aprendemos a:</p>
+                <p>Perguntar “How are you?” (Como você está?)</p>
+                <p>Responder “I’m fine” (Estou bem)</p>
+                <p>Iniciar diálogos simples</p>
+            </div>
+
+            <!-- Passo 2: Introductions (Novo Conteúdo) -->
+            <div id="step-2" class="step hidden">
+                <h1>Lessons 🤝</h1>
+                <p>Ouça e pratique a pronúncia das saudações mais comuns:</p>
+
+                <button id="toggle-vocab" class="action-btn">📖 Lição 1</button>
+                <button id="shortcut-lesson2-btn" class="action-btn" style="background-color: #FF9800;">🚀 Lição 2</button>
+
+                <div id="vocab-content" class="audio-grid hidden">
+                    <h3 style="grid-column: 1 / -1; text-align: center; margin-top: 0; margin-bottom: 15px;">Vocabulário</h3>
+                    <div class="audio-item"><img src="Imagens de Greetins/HI.jpg" class="vocab-icon"><span>Hi!</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Hi.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\Hello.png" class="vocab-icon"><span>Hello!</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Hello.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins/DIA.jpg" class="vocab-icon"><span>Good Morning</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Good Morning.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins/TARDE.jpg" class="vocab-icon"><span>Good Afternoon</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Good Afternoon.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins/NOITE.jpg" class="vocab-icon"><span>Good Evening</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Good Evening.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins/EAÍ.png" class="vocab-icon"><span>Hey there!</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Hey there.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins/OQUE É.jpg" class="vocab-icon"><span>What's up?</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/What's up.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins/ChatGPT Image 19 de fev. de 2026, 00_31_22.png" class="vocab-icon"><span>How's it going?</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/How's it going.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins/ChatGPT Image 19 de fev. de 2026, 00_33_58.png" class="vocab-icon"><span>How are you?</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/How are you.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\I am good.png" class="vocab-icon"><span>I'm fine.</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/I'm fine.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\I AM GREAT.jpg" class="vocab-icon"><span>I am great.</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/I am great.mp3">🔊</button></div>
+
+                    <div class="audio-item"><img src="Imagens de Greetins/BOM CONHECER VC.jpg" class="vocab-icon"><span>Nice to meet you</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Nice to meet you.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins\Long time no see.jpg" class="vocab-icon"><span>Long time no see</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Long time no see.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\Please.jpg" class="vocab-icon"><span>Please</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Plase.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins\O que você faz.png" class="vocab-icon"><span>How do you do?</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/How do you do.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\Adeus.png" class="vocab-icon"><span>Goodbye</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Goodbye.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins\Bye.jpg" class="vocab-icon"><span>Bye</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Bye.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\See you later.png" class="vocab-icon"><span>See you later</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/See you later.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins\Be careful.png" class="vocab-icon"><span>Be careful</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Be careful.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\Have a nice day.jpg" class="vocab-icon"><span>Have a nice day</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Have a Nice day.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins\come in.jpg" class="vocab-icon"><span>Come in</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Come in.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\That's right.png" class="vocab-icon"><span>That's right</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/That's right.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\Excuse me.jpg" class="vocab-icon"><span>Excuse me</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Excuse me.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\Sorry.jpg" class="vocab-icon"><span>Sorry</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Sorry.mp3">🔊</button></div>
+
+                    <div class="audio-item"><img src="Imagens de Greetins\Go it.jpg" class="vocab-icon"><span>Got it</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Got it.mp3">🔊</button></div>
+
+                    <!-- Botão Continuar dentro do Vocabulário -->
+                    <div style="width: 100%; grid-column: 1 / -1; text-align: center; margin-top: 20px;">
+                        <button id="vocab-continue-btn" class="action-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); document.getElementById('vocab-content').classList.add('hidden'); document.getElementById('vocab-pt-content').classList.remove('hidden');">Próximo ➡</button>
+                    </div>
+                </div>
+
+                <div id="vocab-pt-content" class="audio-grid hidden">
+                    <h3 style="grid-column: 1 / -1; text-align: center; margin-top: 0; margin-bottom: 15px;">Vocabulário</h3>
+                    <div class="audio-item"><img src="Imagens de Greetins/HI.jpg" class="vocab-icon"><span>Oi!</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Hi.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\Hello.png" class="vocab-icon"><span>Olá!</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Hello.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins/DIA.jpg" class="vocab-icon"><span>Bom dia</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Good Morning.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins/TARDE.jpg" class="vocab-icon"><span>Boa tarde</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Good Afternoon.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins/NOITE.jpg" class="vocab-icon"><span>Boa noite</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Good Evening.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins/EAÍ.png" class="vocab-icon"><span>E aí!</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Hey there.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins/OQUE É.jpg" class="vocab-icon"><span>E aí? / O que manda?</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/What's up.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins/ChatGPT Image 19 de fev. de 2026, 00_31_22.png" class="vocab-icon"><span>Como vão as coisas?</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/How's it going.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins/ChatGPT Image 19 de fev. de 2026, 00_33_58.png" class="vocab-icon"><span>Como você está?</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/How are you.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\I am good.png" class="vocab-icon"><span>Estou bem.</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/I'm fine.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\I AM GREAT.jpg" class="vocab-icon"><span>Estou ótimo.</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/I am great.mp3">🔊</button></div>
+
+                    <div class="audio-item"><img src="Imagens de Greetins/BOM CONHECER VC.jpg" class="vocab-icon"><span>Prazer em te conhecer</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Nice to meet you.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins/Long time no see.jpg" class="vocab-icon"><span>Quanto tempo!</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Long time no see.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins/Please.jpg" class="vocab-icon"><span>Por favor</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Plase.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins\O que você faz.png" class="vocab-icon"><span>Como vai?</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/How do you do.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\Adeus.png" class="vocab-icon"><span>Adeus</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Goodbye.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins/Bye.jpg" class="vocab-icon"><span>Tchau</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Bye.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\See you later.png" class="vocab-icon"><span>Até logo</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/See you later.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins\Be careful.png" class="vocab-icon"><span>Tenha Cuidado</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Be careful.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins/Have a nice day.jpg" class="vocab-icon"><span>Tenha um bom dia</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Have a Nice day.mp3">🔊</button></div>
+                    
+                    <div class="audio-item"><img src="Imagens de Greetins\come in.jpg" class="vocab-icon"><span>Entre</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Come in.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\That's right.png" class="vocab-icon"><span>Está certo</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/That's right.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins/Excuse me.jpg" class="vocab-icon"><span>Com licença</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Excuse me.mp3">🔊</button></div>
+                   <div class="audio-item"><img src="Imagens de Greetins/Sorry.jpg" class="vocab-icon"><span>Desculpe</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Sorry.mp3">🔊</button></div>
+                    <div class="audio-item"><img src="Imagens de Greetins\Go it.jpg" class="vocab-icon"><span>Entendi</span> <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Got it.mp3">🔊</button></div>
+                    
+
+                    <div style="width: 100%; grid-column: 1 / -1; text-align: center; margin-top: 20px;">
+                        <button id="vocab-pt-continue-btn" class="action-btn">Continuar ➡</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Passo 3: Let's Talk (Conversação) -->
+            <div id="step-talk" class="step hidden">
+                <h1>Let's TALK 🗣️</h1>
+                <p>Pratique com o diálogo entre:</p>
+                <p>Mark e Elena</p>
+                
+                <!-- Card para ouvir a conversa completa -->
+                <div class="full-audio-card">
+                    <button class="play-btn" data-audio="TALK/Áudio completo.mp3">🔊</button>
+                    <div>
+                        <h3>Ouvir conversa completa</h3>
+                        <p>Escute a narração de todo o diálogo.</p>
+                    </div>
+                </div>
+
+                <div class="chat-container">
+                    <!-- Mark -->
+                    <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Mark" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>Mark:</strong> Hi Elena!?</p>
+                            <button class="play-mini-btn" data-audio="TALK/Hi Elena Greetings 1.mp3">🔊</button>
+                        </div>
+                    </div>
+
+                    <!-- Elena -->
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Elena:</strong> Hello Mark!</p>
+                            <button class="play-mini-btn" data-audio="TALK/HELLO MARK Greetins 1.mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Elena" class="avatar">
+                    </div>
+
+                    <!-- Mark -->
+                    <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Mark" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>Mark:</strong> Good Evening Elena.</p>
+                            <button class="play-mini-btn" data-audio="TALK/good evening (mark).mp3">🔊</button>
+                        </div>
+                    </div>
+
+                    <!-- Elena -->
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Elena:</strong> Good Evening</p>
+                            <button class="play-mini-btn" data-audio="TALK/Good EVening (elena).mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Elena" class="avatar">
+                    </div>
+                     <!-- Mark -->
+                     <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Mark" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>Mark:</strong> How are you?</p>
+                            <button class="play-mini-btn" data-audio="TALK/How are you.mp3">🔊</button>
+                        </div>
+                    </div>
+
+                    <!-- Elena -->
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Elena:</strong> I'm good. And you?</p>
+                            <button class="play-mini-btn" data-audio="TALK/i'm good Greetins 2.mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Elena" class="avatar">
+                    </div>
+
+                     <!-- Mark -->
+                     <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Mark" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>Mark:</strong> I'm fine. Thanks!</p>
+                            <button class="play-mini-btn" data-audio="TALK/i'm fine. thanks ELENA GREETINS 2.mp3">🔊</button>
+                        </div>
+                    </div>
+
+                    <!-- Mark -->
+                     <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Mark" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>Mark:</strong> It's a pleasure to see you again.</p>
+                            <button class="play-mini-btn" data-audio="TALK/It's a pleasure to see you again (MARK).mp3">🔊</button>
+                        </div>
+                    </div>
+
+                         <!-- Elena -->
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Elena:</strong> It's nice to see you too!</p>
+                            <button class="play-mini-btn" data-audio="TALK/IT´S NICE TOO SEE YOU TOO.mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Elena" class="avatar">
+                    </div>
+                    <!-- Mark -->
+                     <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Mark" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>Mark:</strong> Where have you been?</p>
+                            <button class="play-mini-btn" data-audio="TALK/So where have you been.mp3">🔊</button>
+                        </div>
+                    </div>
+
+                          <!-- Elena -->
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Elena:</strong> I was travelling abroad</p>
+                            <button class="play-mini-btn" data-audio="TALK/I was travelling to abroad (ELENA).mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Elena" class="avatar">
+                    </div>
+
+                     <!-- Mark -->
+                     <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Mark" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>Mark:</strong> It's amazing.</p>
+                            <button class="play-mini-btn" data-audio="TALK/it's amazing to hear it.mp3">🔊</button>
+                        </div>
+                    </div>
+
+                           <!-- Elena -->
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Elena:</strong> I'm so sorry Mark, but i need to go now</p>
+                            <button class="play-mini-btn" data-audio="TALK/i'm so sorry mark (ELENA).mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Elena" class="avatar">
+                    </div>
+
+                     <!-- Mark -->
+                     <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Mark" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>Mark:</strong> It's okay</p>
+                            <button class="play-mini-btn" data-audio="TALK/it's okay (MARK).mp3">🔊</button>
+                        </div>
+                    </div>
+
+                    
+                           <!-- Elena -->
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Elena:</strong> I see you later</p>
+                            <button class="play-mini-btn" data-audio="TALK/bye bye (ELENA).mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Elena" class="avatar">
+                    </div>
+                    <!-- Mark -->
+                     <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Mark" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>Mark:</strong> Goodbye Elena</p>
+                            <button class="play-mini-btn" data-audio="TALK/goodbye (mark).mp3">🔊</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="lets-listen-btn" class="action-btn">Continuar ➡</button>
+            </div>
+
+            <!-- Passo 4: Listening and Choose (Vídeo Quiz) -->
+            <div id="step-listening" class="step hidden">
+                <h1>Listening & Choose 🎧</h1>
+                <p>Assista ao vídeo e responda às perguntas abaixo:</p>
+
+                <div class="video-container">
+                    <!-- Controls removido para impedir avanço manual. pointer-events: none impede clique direito/pausa -->
+                    <video id="video-quiz-player" style="pointer-events: none;" playsinline webkit-playsinline>
+                        <source id="video-quiz-source" src="" type="video/mp4">
+                        Seu navegador não suporta a reprodução de vídeos.
+                    </video>
+                    <!-- Botão de Play Personalizado (Overlay) -->
+                    <div id="video-start-overlay" class="video-overlay">
+                        <button class="big-play-btn">▶</button>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div id="video-quiz-score" class="quiz-score" style="margin-bottom: 0;">Acertos: 0/0</div>
+                        <button id="skip-to-part2-btn" style="background: none; border: none; color: #6C63FF; cursor: pointer; text-decoration: underline; font-size: 0.85em; padding: 0;">Pular para Interpretação ⏩</button>
+                        <button id="skip-interpretation-btn" style="background: none; border: none; color: #6C63FF; cursor: pointer; text-decoration: underline; font-size: 0.85em; padding: 0; display: none;">Pular Interpretação ⏩</button>
+                    </div>
+                    <h3 id="video-quiz-question">Carregando pergunta...</h3>
+                    <div id="video-quiz-options" class="quiz-options-grid">
+                        <!-- Opções serão inseridas via JavaScript -->
+                    </div>
+                    <p id="video-quiz-feedback" class="quiz-feedback"></p>
+                    <button id="video-quiz-next-btn" class="action-btn hidden" style="margin-top: 15px;">Próxima Pergunta ➡</button>
+                </div>
+            </div>
+
+            <!-- Passo 5: Próxima Lição (Página Solo) -->
+            <div id="step-next-lesson" class="step hidden">
+                <h1>Lição 2 🚀</h1>
+                <p>Ouça e pratique a pronúncia das perguntas mais comuns:</p>
+                <div id="lesson2-intro-content">
+                    <p>Parabéns! Você concluiu o Módulo 1 com sucesso.</p>
+                    <p>In the second Lesson, we will learn about:</p>
+                    
+                    <h3>Vocabulário (Perguntas iniciais)</h3>
+                </div>
+                <button id="toggle-to-ask-btn" class="action-btn">📖 Vocabulário</button>
+
+                <div id="to-ask-content" class="audio-grid hidden">
+                    <h3 style="grid-column: 1 / -1; text-align: center; margin-top: 0; margin-bottom: 15px;">Vocabulário</h3>
+                    <div class="audio-item">
+                        <img src="Lição 02/images/What's your name.jpg" class="vocab-icon">
+                        <span>What is your name?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/What is your name.mp3">🔊</button>
+                    </div>
+                    <div class="audio-item">
+                        <img src="Lição 02/images/Where are you from.jpg" class="vocab-icon">
+                        <span>Where are you from?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/Where are you from.mp3">🔊</button>
+                    </div>
+                    <div class="audio-item">
+                        <img src="Lição 02/images/How old are you.jpg" class="vocab-icon">
+                        <span>How old are you?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/How old are you.mp3">🔊</button>
+                    </div>
+                    <div class="audio-item">
+                        <img src="Lição 02/images/What do you do.jpg" class="vocab-icon">
+                        <span>What do you do?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/What do you do.mp3">🔊</button>
+                    </div>
+                    <div class="audio-item">
+                        <img src="Lição 02/images/Where do you live.png" class="vocab-icon">
+                        <span>Where do you live?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/Where do you live.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/What time is it.jpg" class="vocab-icon">
+                        <span>What time is it?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/What time is it.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/What is your favorite color.jpg" class="vocab-icon">
+                        <span>What is your favorite color?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/What is your favorite color.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/When is your birthday.jpg" class="vocab-icon">
+                        <span>When is your birthday?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/when is your birthday.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/Who are you.png" class="vocab-icon">
+                        <span>Who are you?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/Who are you.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/How much is it.jpg" class="vocab-icon">
+                        <span>How much is it?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/How much is it.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/How do you spell your name.jpg" class="vocab-icon">
+                        <span>How do you spell your name?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/How do you spell your name.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/Do you speak English.jpg" class="vocab-icon">
+                        <span>Do you speak English?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/Do you speak English.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/Are you ready.jpg" class="vocab-icon">
+                        <span>Are you ready?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/Are you ready.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/Do you like coffee.jpg" class="vocab-icon">
+                        <span>Do you like coffee?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/Do you like coffee.mp3">🔊</button>
+                    </div>
+
+                    <!-- Botão Continuar dentro da Lição 2 -->
+                    <div style="width: 100%; grid-column: 1 / -1; text-align: center; margin-top: 20px;">
+                        <button id="to-ask-continue-btn" class="action-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); document.getElementById('to-ask-content').classList.add('hidden'); document.getElementById('to-ask-pt-content').classList.remove('hidden');">Próximo ➡</button>
+                    </div>
+                </div>
+
+                <!-- Seção Português -> Inglês (Lição 2) -->
+                <div id="to-ask-pt-content" class="audio-grid hidden">
+                    <h3 style="grid-column: 1 / -1; text-align: center; margin-top: 0; margin-bottom: 15px;">Vocabulário</h3>
+                    <div class="audio-item">
+                        <img src="Lição 02/images/What's your name.jpg" class="vocab-icon">
+                        <span>Qual é o seu nome?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/What is your name.mp3">🔊</button>
+                    </div>
+                    <div class="audio-item">
+                        <img src="Lição 02/images/Where are you from.jpg" class="vocab-icon">
+                        <span>De onde você é?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/Where are you from.mp3">🔊</button>
+                    </div>
+                    <div class="audio-item">
+                        <img src="Lição 02/images/How old are you.jpg" class="vocab-icon">
+                        <span>Quantos anos você tem?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/How old are you.mp3">🔊</button>
+                    </div>
+                    <div class="audio-item">
+                        <img src="Lição 02/images/What do you do.jpg" class="vocab-icon">
+                        <span>O que você faz?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/What do you do.mp3">🔊</button>
+                    </div>
+                    <div class="audio-item">
+                        <img src="Lição 02/images/Where do you live.png" class="vocab-icon">
+                        <span>Onde você mora?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/Where do you live.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/What time is it.jpg" class="vocab-icon">
+                        <span>Que horas são?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/What time is it.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/What is your favorite color.jpg" class="vocab-icon">
+                        <span>Qual é a sua cor favorita?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/What is your favorite color.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/When is your birthday.jpg" class="vocab-icon">
+                        <span>Quando é o seu aniversário?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/when is your birthday.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/Who are you.png" class="vocab-icon">
+                        <span>Quem é você?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/Who are you.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/How much is it.jpg" class="vocab-icon">
+                        <span>Quanto custa?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/How much is it.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/How do you spell your name.jpg" class="vocab-icon">
+                        <span>Como se soletra seu nome?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/How do you spell your name.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/Do you speak English.jpg" class="vocab-icon">
+                        <span>Você fala inglês?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/Do you speak English.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/Are you ready.jpg" class="vocab-icon">
+                        <span>Você está pronto?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/Are you ready.mp3">🔊</button>
+                    </div>
+
+                    <div class="audio-item">
+                        <img src="Lição 02/images/Do you like coffee.jpg" class="vocab-icon">
+                        <span>Você gosta de café?</span> 
+                        <button class="play-btn" data-audio="Lição 02/Vocabulário lesson 2/Do you like coffee.mp3">🔊</button>
+                    </div>
+
+                    <div style="width: 100%; grid-column: 1 / -1; text-align: center; margin-top: 20px;">
+                        <button id="to-ask-pt-continue-btn" class="action-btn">Continuar ➡</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Passo 6: Let's Talk Lição 2 -->
+            <div id="step-talk-lesson2" class="step hidden">
+                <!-- Seta para voltar ao início da Lição 2 -->
+                <a href="#" onclick="document.getElementById('prev-btn').click(); return false;" class="back-arrow" style="position: relative; display: inline-block; margin-bottom: 15px; color: inherit;" title="Voltar para o início da Lição 2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5"></path>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </a>
+                <h1>Let's TALK 🗣️</h1>
+                <p>Pratique o diálogo com as perguntas aprendidas entre:</p>
+                <p>John e Anna</p>
+                
+                <!-- Card para ouvir a conversa completa -->
+                <div class="full-audio-card">
+                    <button class="play-btn" data-audio="Lição 02\audio\LetTalk2\John and Anna.mp3">🔊</button>
+                    <div>
+                        <h3>Ouvir conversa completa</h3>
+                        <p>Escute a narração de todo o diálogo.</p>
+                    </div>
+                </div>
+
+                <div class="chat-container">
+                   
+                    <!-- 1. Person A -->
+                    <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Person A" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>Desconhecido:</strong> Hi!</p>
+                        <button class="play-mini-btn" data-audio="Lição 02\audio\LetTalk2\John HI.mp3">🔊</button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Person B -->
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Desconhecida:</strong> Hi!</p>
+                            <button class="play-mini-btn" data-audio="Lição 02\audio\LetTalk2\Anna Hi.mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Person B" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                    </div>
+
+                    <!-- 3. Person A -->
+                    <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Person A" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>John:</strong> I'm John. What's your name?</p>
+                            <button class="play-mini-btn" data-audio="Lição 02\audio\LetTalk2\I'm John. What's your name.mp3">🔊</button>
+                        </div>
+                    </div>
+
+                    <!-- 4. Person B -->
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Anna:</strong> I'm Anna.</p>
+                            <button class="play-mini-btn" data-audio="Lição 02\audio\LetTalk2\I'm Anna..mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Person B" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                    </div>
+
+
+                    <!-- 7. Person B -->
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Anna:</strong> How old are you?</p>
+                            <button class="play-mini-btn" data-audio="Lição 02\audio\LetTalk2\How old are you.mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Person B" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                    </div>
+
+                    <!-- 8. Person A -->
+                    <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Person A" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>John:</strong> I'm 16. And you?</p>
+                            <button class="play-mini-btn" data-audio="Lição 02\audio\LetTalk2\John I'm 16. And you.mp3">🔊</button>
+                        </div>
+                    </div>
+
+
+                    <!-- 10. Person B -->
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Anna:</strong> I'm 15.</p>
+                            <button class="play-mini-btn" data-audio="Lição 02\audio\LetTalk2\I'm 15..mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Person B" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                    </div>
+
+                    <!-- 12. Person B -->
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Anna:</strong> Where are you from?</p>
+                            <button class="play-mini-btn" data-audio="Lição 02\audio\LetTalk2\Where are you from.mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Person B" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                    </div>
+
+                    <!-- 13. Person A -->
+                    <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Person A" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>John:</strong> I'm from Brazil</p>
+                            <button class="play-mini-btn" data-audio="Lição 02\audio\LetTalk2\I'm from Brazil.mp3">🔊</button>
+                        </div>
+                    </div>
+
+                    <!-- 14. Person B -->
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Anna:</strong> Nice to meet you</p>
+                            <button class="play-mini-btn" data-audio="Lição 02\audio\LetTalk2\Nice to meet you.mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Person B" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                    </div>
+                 <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Person A" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>John:</strong> Nice to meet you too</p>
+                            <button class="play-mini-btn" data-audio="Lição 02\audio\LetTalk2\Nice to meet you too.mp3">🔊</button>
+                        </div>
+                    </div>
+                    <div class="chat-row elena-row">
+                        <div class="chat-bubble elena">
+                            <p><strong>Anna:</strong> Goodbye John</p>
+                        <button class="play-mini-btn" data-audio="Lição 02\audio\LetTalk2\Goodbye John.mp3">🔊</button>
+                        </div>
+                        <img src="TALK/ELENA.png" alt="Person B" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                    </div>
+                <div class="chat-row mark-row">
+                        <img src="TALK/MARK.jpg" alt="Person A" class="avatar" style="width: 50px; height: 50px; object-fit: cover;">
+                        <div class="chat-bubble mark">
+                            <p><strong>John:</strong> Bye</p>
+                            <button class="play-mini-btn" data-audio="Lição 02\audio\LetTalk2\Bye.mp3">🔊</button>
+                        </div>
+                    </div>
+            </div>
+            </div>
+
+        </header>
+        <div class="navigation">
+            <button id="prev-btn" class="nav-btn disabled">⬅ Anterior</button>
+            <button id="next-btn" class="nav-btn">Próximo ➡</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
