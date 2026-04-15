@@ -1,0 +1,332 @@
+/* ===== VARIÁVEIS GLOBAIS ===== */
+:root {
+    --bg-color: #f4f7f6; /* Fundo mais suave e moderno */
+    --text-color: #333333;
+    --text-muted: #6b7280;
+    --card-bg: #ffffff;
+    
+    /* Sistema de Cores por Nível */
+    --color-basico: #10b981;       /* Verde esmeralda */
+    --color-intermediario: #3b82f6; /* Azul vibrante */
+    --color-avancado: #8b5cf6;     /* Roxo elegante */
+    
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+    
+    --font-main: 'Poppins', system-ui, -apple-system, sans-serif;
+    --radius-lg: 20px;
+    --transition-normal: 0.3s ease;
+}
+
+/* ===== RESET E BASE ===== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+header h1 {
+    /* clamp() para tipografia fluida (diminui no celular, cresce no PC automaticamente) */
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: #1a1a2e;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+header h2 {
+    display: inline-block;
+    padding: 10px 30px;
+    background: linear-gradient(135deg, var(--color-intermediario), #2563eb);
+    color: #ffffff;
+    border-radius: 50px;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-weight: 600;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+header p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+/* ===== GRID INTELIGENTE ===== */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    /* Grid responsivo automático sem precisar de @media queries */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 30px;
+    animation: fadeInUp 0.8s ease-out backwards;
+}
+
+/* ===== CARDS DE NAVEGAÇÃO ===== */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none; /* Como os cards são tags <a>, removemos o sublinhado */
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    outline: none;
+    position: relative;
+}
+
+/* Navegação por mouse e teclado (Tab) */
+.card:hover,
+.card:focus-visible {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px var(--shadow-hover);
+    border-color: rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.card:focus-visible {
+    outline: 3px solid var(--color-avancado);
+    outline-offset: 5px;
+}
+
+/* Cabeçalhos Dinâmicos baseados nas classes existentes no HTML */
+.card-header {
+    padding: 25px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.card-header .icon {
+    font-size: 1.8rem;
+}
+
+.card-header.basico { background: linear-gradient(135deg, var(--color-basico), #059669); }
+.card-header.intermediario { background: linear-gradient(135deg, var(--color-intermediario), #2563eb); }
+.card-header.avancado { background: linear-gradient(135deg, var(--color-avancado), #7c3aed); }
+
+/* Corpo dos Cards */
+.card-body {
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Estica o conteúdo para igualar a altura de todos os cards */
+    justify-content: space-between;
+}
+
+.card-body p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Estilo do Link Inferior (Acessar Nível) */
+.btn-acessar {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: opacity var(--transition-normal);
+}
+
+/* Uso de seletor moderno (:has) para combinar a cor do texto com a cor do header do card */
+.card:has(.basico) .btn-acessar { color: var(--color-basico); }
+.card:has(.intermediario) .btn-acessar { color: var(--color-intermediario); }
+.card:has(.avancado) .btn-acessar { color: var(--color-avancado); }
+
+.card:hover .btn-acessar {
+    opacity: 0.8;
+}
+
+/* Setinha animada no final do texto */
+.arrow {
+    margin-left: 8px;
+    transition: transform var(--transition-normal);
+}
+
+/* Anima a seta para frente ao passar o mouse por cima do card inteiro */
+.card:hover .arrow,
+.card:focus-visible .arrow {
+    transform: translateX(6px);
+}
+
+/* ===== BOTÃO FLUTUANTE DE TEMA ===== */
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: #1a1a2e;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform var(--transition-normal), background var(--transition-normal);
+    z-index: 1000;
+}
+.floating-btn:hover {
+    transform: scale(1.1) translateY(-3px);
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Fallback para navegadores bem antigos que não suportam o :has() */
+@supports not selector(:has(*)) {
+    .btn-acessar {
+        color: var(--color-intermediario);
+    }
+}
+
+/* ===== DARK MODE BASE ===== */
+body.dark-mode {
+    --primary-color: #8b85ff;
+    --secondary-color: #ff7a95;
+    --text-color: #f1f5f9;
+    --card-bg: rgba(31, 41, 55, 0.95);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+
+    background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+/* ===== TEXTOS ===== */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p {
+    color: var(--text-color);
+}
+
+body.dark-mode header h2 {
+    background: linear-gradient(135deg, var(--primary-color), #5a54e0);
+    box-shadow: 0 5px 15px rgba(139, 133, 255, 0.3);
+}
+
+/* ===== CARDS ===== */
+body.dark-mode .card {
+    background: #1f2937;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .card:hover,
+body.dark-mode .card:focus-visible {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== INFO BOX ===== */
+body.dark-mode .info-box {
+    background: rgba(255,255,255,0.05);
+    color: #e5e7eb;
+}
+
+/* ===== HIGHLIGHT ===== */
+body.dark-mode .highlight {
+    background: rgba(108, 99, 255, 0.2);
+}
+
+/* ===== BOTÕES ===== */
+body.dark-mode .btn-primary {
+    background: linear-gradient(135deg, #8b85ff, #5a54e0);
+}
+
+body.dark-mode .btn-primary:hover {
+    box-shadow: 0 10px 25px rgba(139, 133, 255, 0.5);
+}
+
+/* ===== GRID ITEMS ===== */
+body.dark-mode .grid > div {
+    background: #1f2937;
+}
+
+/* ===== PROGRESS BAR ===== */
+body.dark-mode .progress-container {
+    background: #374151;
+}
+
+body.dark-mode .progress-bar {
+    background: var(--primary-color);
+}
+
+/* ===== CTA ===== */
+body.dark-mode .cta {
+    background: linear-gradient(135deg, #8b85ff, #ff7a95);
+}
+
+/* ===== BOTÃO FLUTUANTE ===== */
+body.dark-mode .floating-btn {
+    background: var(--primary-color);
+    box-shadow: 0 5px 20px rgba(139,133,255,0.5);
+}
+
+/* ===== INPUTS (se usar futuramente) ===== */
+body.dark-mode input,
+body.dark-mode textarea {
+    background: #111827;
+    color: #f1f5f9;
+    border: 1px solid #374151;
+}
+
+/* ===== SCROLLBAR (opcional, mas bonito) ===== */
+body.dark-mode::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.dark-mode::-webkit-scrollbar-track {
+    background: #111827;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+    background: #6C63FF;
+    border-radius: 10px;
+}
