@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons Map Responsivo</title>
+    <link rel="stylesheet" href="liso.css">
+    <link rel="stylesheet" href="../../../../../curso.css">
+    
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="container">
+            <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                <text x="500" y="80" class="title">LESSONS</text>
+
+                <path d="M200 250 C 250 320, 350 180, 450 250" class="path-line"/>
+                <path d="M550 250 C 600 320, 700 180, 800 250" class="path-line"/>
+
+                <a href="lis1.html">
+                    <g class="lesson-node" id="lesson-1">
+                        <path d="M105 205 H170 L200 245 L170 285 H105 V205Z" class="marker-bg"/>
+                        <rect x="100" y="220" width="12" height="50" rx="3" class="accent"/>
+                        <text x="145" y="258" class="number">1</text>
+                    </g>
+                </a>
+
+                <a href="lis2.html">
+                    <g class="lesson-node" id="lesson-2">
+                        <path d="M455 205 H520 L550 245 L520 285 H455 V205Z" class="marker-bg"/>
+                        <rect x="450" y="220" width="12" height="50" rx="3" class="accent"/>
+                        <text x="495" y="258" class="number">2</text>
+                    </g>
+                </a>
+
+                <a href="lis3.html">
+                    <g class="lesson-node" id="lesson-3">
+                        <path d="M805 205 H870 L900 245 L870 285 H805 V205Z" class="marker-bg"/>
+                        <rect x="800" y="220" width="12" height="50" rx="3" class="accent"/>
+                        <text x="845" y="258" class="number">3</text>
+                    </g>
+                </a>
+            </svg>
+        </div>
+    </div>
+
+    <div class="navigation" style="display: flex; justify-content: center; gap: 80px; padding: 20px;">
+        <a href="../conteudo2.html" id="prev-btn" class="nav-btn">⬅ Anterior</a>
+    </div>
+
+    <script src="liso.js"></script>
+    <script src="../../../../../curso.js"></script>
+</body>
+</html>

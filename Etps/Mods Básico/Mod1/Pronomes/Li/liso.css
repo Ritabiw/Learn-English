@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+}
+/*
+ * liso.css
+ * Styles for the Lessons Map page.
+ */
+
+/* Remove default body margin to ensure full control over layout */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1A2E54;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita scroll horizontal em telas muito pequenas */
+}
+
+/* Center the main content wrapper horizontally on the page */
+.main-wrapper {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px; /* Define a maximum width for your content */
+    margin: 0 auto;    /* This centers the block element horizontally */
+}
+
+.container {
+    width: 100%;
+    max-width: 900px; /* Limite máximo para telas grandes */
+    height: auto;
+}
+
+svg {
+    width: 100%;
+    height: auto; /* Mantém a proporção baseada no viewBox */
+    display: block;
+}
+
+/* Estilos de Texto e Elementos */
+/* For the SVG title, 'text-anchor: middle' ensures the text is centered on its 'x' coordinate */
+.title {
+    fill: white;
+    font-size: 65px;
+    font-weight: bold;
+    text-anchor: middle;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.path-line {
+    stroke: #F39C12;
+    stroke-width: 8;
+    stroke-dasharray: 12;
+    fill: none;
+    stroke-linecap: round;
+}
+/* Ensure the SVG itself behaves as a block element and scales responsively */
+/* Moved this block to avoid nesting issues and apply to the main SVG element */
+svg {
+    display: block; /* Removes extra space below the SVG */
+    width: 100%;    /* Makes the SVG fill the width of its parent container */
+    height: auto;   /* Maintains the aspect ratio of the SVG */
+}
+
+.lesson-node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent; /* Remove brilho de clique no mobile */
+}
+
+.lesson-node:hover {
+    filter: brightness(1.2);
+}
+
+.marker-bg {
+    fill: #444CC7;
+}
+
+.accent {
+    fill: #F39C12;
+}
+
+.number {
+    fill: white;
+    font-size: 45px;
+    font-weight: bold;
+    text-anchor: middle;
+    font-family: sans-serif;
+}
+
+/* Navegação */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    border-top: 2px solid rgba(0,0,0,0.05);
+    padding-top: 20px;
+}
+
+.nav-btn {
+    padding: 12px 35px;
+    background: linear-gradient(135deg, var(--primary-color), #4834d4);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px; /* Formato Pílula */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:active {
+    transform: translateY(2px) scale(0.98); /* Efeito de clique tátil */
+    box-shadow: 0 2px 10px rgba(108, 99, 255, 0.2);
+}
+
+.nav-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(108, 99, 255, 0.5);
+    filter: brightness(1.1);
+}
+
+.nav-btn.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Ajuste para telas muito pequenas (Mobile Portrait) */
+@media (max-width: 480px) {
+    .title {
+        font-size: 80px; /* Aumenta o título proporcionalmente no mobile */
+    }
+}
+
+/* Estilos para o container de vocabulário com cards */
+.vocab-grid-container {
+    width: 100%;
+    max-width: 1100px; /* Alinha com o .container do curso.css */
+    margin: 40px auto; /* Centraliza e adiciona margem */
+    padding: 0 20px; /* Padding para evitar que os cards colem nas bordas */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); /* Ajustado para cards de vocabulário */
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+.vocab-grid-container h3 {
+    grid-column: 1 / -1; /* Título ocupa toda a largura do grid */
+    color: var(--text-color); /* Usa a variável de cor de texto do curso.css */
+}
+
+/* O h3 dentro de .vocab-grid-container já cobre os estilos de grid-column, text-align e margins */
+/* Estilos específicos para os cards de vocabulário */
+.vocab-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui o conteúdo verticalmente */
+}
+
+.vocab-card .card-header {
+    flex-direction: column; /* Imagem e texto empilhados */
+    padding: 25px; /* Aumentado para dar mais espaço ao redor da imagem e texto */
+    gap: 15px; /* Aumentado para dar mais espaço entre a imagem e o texto */
+}
+
+.vocab-card .vocab-icon {
+    width: 80px; /* Tamanho da imagem do ícone */
+    height: 80px;
+    border-radius: 50%; /* Imagens redondas */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+.vocab-card .card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.vocab-card .play-btn {
+    background-color: var(--color-basico); /* Usa a cor básica do curso.css */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.vocab-card .play-btn:hover {
+    filter: brightness(1.1);
+}
+/* You can add more specific styles for .path-line, .lesson-node, etc., here if needed. */
+
+/* === Estilos do Retângulo e Título Lessons === */
+.container-titulo {
+    /* Centralização do texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Dimensões e Espaçamento */
+    width: fit-content;
+    padding: 20px 60px;
+    margin: 20px auto 40px auto; /* Margem ajustada para não afastar muito do SVG */
+
+    /* Estilo do Retângulo */
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    
+    /* Transição suave */
+    transition: transform 0.3s ease;
+}
+
+.container-titulo:hover {
+    transform: scale(1.05);
+}
+
+.titulo-texto {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

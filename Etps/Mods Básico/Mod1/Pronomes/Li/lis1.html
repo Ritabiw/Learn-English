@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulário</title> <!-- Título adicionado para esta página de vocabulário -->
+    <link rel="stylesheet" href="liso.css">
+    <link rel="stylesheet" href="../../../../../curso.css">
+    <style>
+        .conversation-container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            background-color: #f4f4f9;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        .chat-bubble {
+            padding: 12px 18px;
+            border-radius: 20px;
+            max-width: 75%;
+            font-size: 1.1rem;
+            word-wrap: break-word;
+        }
+        .chat-bubble.left {
+            align-self: flex-start;
+            background-color: #e9ecef;
+            color: #333;
+            border-bottom-left-radius: 2px;
+        }
+        .chat-bubble.right {
+            align-self: flex-end;
+            background-color: #007bff;
+            color: #fff;
+            border-bottom-right-radius: 2px;
+        }
+
+        /* Estilos para os botões de navegação */
+        .nav-btn {
+            background-color: #040c14; /* Cor de fundo azul */
+            color: white;              /* Cor do texto branca */
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav-btn:hover:not(.disabled) {
+            background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+            transform: translateY(-2px); /* Efeito de levantar o botão */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- O conteúdo abaixo já estava presente no arquivo original lis1.html -->
+
+    <div id="vocabSection" class="vocab-grid-container">
+        <h3 style="grid-column: 1 / -1; text-align: center; margin-top: 0; margin-bottom: 15px;">Vocabulário</h3>
+        
+        <a href="#" class="card vocab-card" aria-label="Hi!">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/HI.jpg" class="vocab-icon" alt="Hi!">
+                <span>Hi!</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Hi.mp3" aria-label="Play audio for Hi!">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Hello!">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/Hello.png" class="vocab-icon" alt="Hello!">
+                <span>Hello!</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Hello.mp3" aria-label="Play audio for Hello!">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Good Morning">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/DIA.jpg" class="vocab-icon" alt="Good Morning">
+                <span>Good Morning</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Good Morning.mp3" aria-label="Play audio for Good Morning">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Good Afternoon">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/TARDE.jpg" class="vocab-icon" alt="Good Afternoon">
+                <span>Good Afternoon</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Good Afternoon.mp3" aria-label="Play audio for Good Afternoon">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Good Evening">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/NOITE.jpg" class="vocab-icon" alt="Good Evening">
+                <span>Good Evening</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Good Evening.mp3" aria-label="Play audio for Good Evening">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Hey there!">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/EAÍ.png" class="vocab-icon" alt="Hey there!">
+                <span>Hey there!</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Hey there.mp3" aria-label="Play audio for Hey there!">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="What's up?">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/OQUE É.jpg" class="vocab-icon" alt="What's up?">
+                <span>What's up?</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/What's up.mp3" aria-label="Play audio for What's up?">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="How's it going?">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/ChatGPT Image 19 de fev. de 2026, 00_31_22.png" class="vocab-icon" alt="How's it going?">
+                <span>How's it going?</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/How's it going.mp3" aria-label="Play audio for How's it going?">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="How are you?">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/ChatGPT Image 19 de fev. de 2026, 00_33_58.png" class="vocab-icon" alt="How are you?">
+                <span>How are you?</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/How are you?.mp3" aria-label="Play audio for How are you?">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="I'm fine.">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/I am good.png" class="vocab-icon" alt="I'm fine.">
+                <span>I'm fine.</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/I'm fine.mp3" aria-label="Play audio for I'm fine.">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="I am great.">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/I AM GREAT.jpg" class="vocab-icon" alt="I am great.">
+                <span>I am great.</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/I am great.mp3" aria-label="Play audio for I am great.">🔊</button>
+            </div>
+        </a>
+
+        <a href="#" class="card vocab-card" aria-label="Nice to meet you">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/BOM CONHECER VC.jpg" class="vocab-icon" alt="Nice to meet you">
+                <span>Nice to meet you</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Nice to meet you.mp3" aria-label="Play audio for Nice to meet you">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Long time no see">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/Long time no see.jpg" class="vocab-icon" alt="Long time no see">
+                <span>Long time no see</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Long time no see.mp3" aria-label="Play audio for Long time no see">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Please">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/Please.jpg" class="vocab-icon" alt="Please">
+                <span>Please</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Plase.mp3" aria-label="Play audio for Please">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="How do you do?">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/O que você faz.png" class="vocab-icon" alt="How do you do?">
+                <span>How do you do?</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/How do you do.mp3" aria-label="Play audio for How do you do?">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Goodbye">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/Adeus.png" class="vocab-icon" alt="Goodbye">
+                <span>Goodbye</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Goodbye.mp3" aria-label="Play audio for Goodbye">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Bye">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/Bye.jpg" class="vocab-icon" alt="Bye">
+                <span>Bye</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Bye.mp3" aria-label="Play audio for Bye">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="See you later">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/See you later.png" class="vocab-icon" alt="See you later">
+                <span>See you later</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/See you later.mp3" aria-label="Play audio for See you later">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Be careful">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/Be careful.png" class="vocab-icon" alt="Be careful">
+                <span>Be careful</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Be careful.mp3" aria-label="Play audio for Be careful">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Have a nice day">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/Have a nice day.jpg" class="vocab-icon" alt="Have a nice day">
+                <span>Have a nice day</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Have a Nice day.mp3" aria-label="Play audio for Have a nice day">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Come in">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/come in.jpg" class="vocab-icon" alt="Come in">
+                <span>Come in</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Come in.mp3" aria-label="Play audio for Come in">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="That's right">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/That's right.png" class="vocab-icon" alt="That's right">
+                <span>That's right</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/That's right.mp3" aria-label="Play audio for That's right">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Excuse me">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/Excuse me.jpg" class="vocab-icon" alt="Excuse me">
+                <span>Excuse me</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Excuse me.mp3" aria-label="Play audio for Excuse me">🔊</button>
+            </div>
+        </a>
+        
+        <a href="#" class="card vocab-card" aria-label="Sorry">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/Sorry.jpg" class="vocab-icon" alt="Sorry">
+                <span>Sorry</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Sorry.mp3" aria-label="Play audio for Sorry">🔊</button>
+            </div>
+        </a>
+
+        <a href="#" class="card vocab-card" aria-label="Got it">
+            <div class="card-header basico">
+                <img src="Imagens de Greetins/Go it.jpg" class="vocab-icon" alt="Got it">
+                <span>Got it</span>
+            </div>
+            <div class="card-body">
+                <button class="play-btn" data-audio="Imagens de Greetins/Greetins audio/Got it.mp3" aria-label="Play audio for Got it">🔊</button>
+            </div>
+        </a>
+    </div>
+    
+    <div id="letsTalkSection" style="display: none; text-align: center; padding: 40px;">
+        <h3 style="margin-top: 0; margin-bottom: 25px;">Let's Talk</h3>
+        
+        <div class="conversation-container">
+            <div class="chat-bubble left">
+                <strong>Anna:</strong> Hi! Good morning.
+            </div>
+            <div class="chat-bubble right">
+                <strong>John:</strong> Hello! Good morning. How are you?
+            </div>
+            <div class="chat-bubble left">
+                <strong>Anna:</strong> I'm fine, thank you. What's up?
+            </div>
+            <div class="chat-bubble right">
+                <strong>John:</strong> Not much. I am great. Nice to meet you!
+            </div>
+            <div class="chat-bubble left">
+                <strong>Anna:</strong> Nice to meet you too! See you later.
+            </div>
+            <div class="chat-bubble right">
+                <strong>John:</strong> Bye! Have a nice day.
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation main-navigation">
+        <a href="liso.html" id="prev-btn" class="nav-btn">⬅ Anterior</a>
+        <a href="#" id="next-btn" class="nav-btn">Próximo ➡</a>
+    </div>
+
+    <script src="liso.js"></script>
+    <script src="../../../../../curso.js"></script>
+    <script>
+        // Adiciona a funcionalidade de áudio para os botões dentro dos cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const vocabSection = document.getElementById('vocabSection');
+            const letsTalkSection = document.getElementById('letsTalkSection');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            let currentView = 'vocab'; // 'vocab' or 'letsTalk'
+
+            function updateNavigationButtons() {
+                if (currentView === 'vocab') {
+                    prevBtn.href = 'liso.html'; // Link para a página anterior
+                    prevBtn.textContent = '⬅ Anterior';
+                    nextBtn.href = '#'; // O href será manipulado por JS
+                    nextBtn.classList.remove('disabled');
+                    nextBtn.textContent = 'Próximo ➡';
+                } else if (currentView === 'letsTalk') {
+                    prevBtn.href = '#'; // Mantém como link, mas a ação é controlada por JS
+                    prevBtn.textContent = '⬅ Vocabulário';
+                    nextBtn.href = '#'; // O href será manipulado por JS (ou para a próxima página real)
+                    nextBtn.classList.add('disabled'); // Desabilita se for a última seção nesta página
+                    nextBtn.textContent = 'Fim da Lição';
+                }
+            }
+
+            function handleNext() {
+                if (currentView === 'vocab') {
+                    vocabSection.style.display = 'none';
+                    letsTalkSection.style.display = 'block';
+                    currentView = 'letsTalk';
+                }
+                updateNavigationButtons();
+            }
+
+            function handlePrev() {
+                if (currentView === 'letsTalk') {
+                    letsTalkSection.style.display = 'none';
+                    vocabSection.style.display = 'grid'; // Volta a exibir como grid
+                    currentView = 'vocab';
+                } else if (currentView === 'vocab') {
+                    // Se estiver na seção de vocabulário, o botão 'Anterior' navega para a página anterior
+                    window.location.href = prevBtn.href;
+                    return; // Sai para evitar que updateNavigationButtons seja chamado novamente
+                }
+                updateNavigationButtons();
+            }
+
+            // Anexa os event listeners para os botões de navegação
+            nextBtn.addEventListener('click', (event) => {
+                if (!nextBtn.classList.contains('disabled')) {
+                    event.preventDefault(); // Previne o comportamento padrão do link
+                    handleNext();
+                }
+            });
+
+            prevBtn.addEventListener('click', (event) => {
+                // Previne o comportamento padrão apenas se estivermos manipulando a transição internamente
+                if (currentView === 'letsTalk') {
+                    event.preventDefault();
+                    handlePrev();
+                }
+                // Se currentView for 'vocab', o href padrão do botão cuidará da navegação
+            });
+
+            // Configuração inicial do estado
+            updateNavigationButtons();
+
+            // Lógica existente do player de áudio (mantida dentro do DOMContentLoaded)
+            const playButtons = document.querySelectorAll('.play-btn');
+            playButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault(); // Evita que o link do card seja ativado
+                    event.stopPropagation(); // Impede que o clique se propague para o card (<a>)
+                    const audioSrc = this.dataset.audio;
+                    if (audioSrc) {
+                        const audio = new Audio(audioSrc);
+                        audio.play().catch(e => console.error("Erro ao reproduzir áudio:", e));
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
