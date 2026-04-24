@@ -90,15 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (shortcutLesson2Btn) shortcutLesson2Btn.style.display = 'none';
             
             if (letsTalkBtn) letsTalkBtn.classList.add('hidden');
-            
-            // Adiciona delay escalonado para animação de entrada
-            const items = vocabContent.querySelectorAll('.audio-item');
-            items.forEach((item, index) => {
-                // Reinicia a animação de forma robusta para mobile
-                item.style.animation = 'none';
-                item.offsetHeight; /* trigger reflow */
-                item.style.animation = `popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.05}s backwards`;
-            });
         });
     }
 
@@ -116,14 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Oculta os textos da Lição 2 para focar apenas nos cards de vocabulário
             const lesson2Intro = document.getElementById('lesson2-intro-content');
             if (lesson2Intro) lesson2Intro.style.display = 'none';
-
-            // Animação de entrada
-            const items = toAskContent.querySelectorAll('.audio-item');
-            items.forEach((item, index) => {
-                item.style.animation = 'none';
-                item.offsetHeight; /* trigger reflow */
-                item.style.animation = `popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.05}s backwards`;
-            });
         });
     }
 
@@ -190,13 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (toAskPtContent) toAskPtContent.classList.add('hidden');
             if (toAskContent) {
                 toAskContent.classList.remove('hidden');
-                // Animação de entrada
-                const items = toAskContent.querySelectorAll('.audio-item');
-                items.forEach((item, index) => {
-                    item.style.animation = 'none';
-                    item.offsetHeight; /* trigger reflow */
-                    item.style.animation = `popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.05}s backwards`;
-                });
             }
             if (toggleToAskBtn) toggleToAskBtn.style.display = 'none';
             if (lesson2Intro) lesson2Intro.style.display = 'none';
@@ -209,14 +185,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (nextBtn && step1 && step2) {
-        nextBtn.addEventListener('click', () => {
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            // Se estamos na página inicial, força a navegação para a lição 1
+            if (step1 && !step2) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                window.location.href = "lis1.html";
+                return;
+            }
+
+            e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
             // Se estiver no Passo 1 (Greetings), vai para o Passo 2 (Introdução)
-            if (!step1.classList.contains('hidden')) {
+            if (step1 && !step1.classList.contains('hidden')) {
                 step1.classList.add('hidden');
-                step2.classList.remove('hidden');
+                if (step2) step2.classList.remove('hidden');
                 
                 if (prevBtn) prevBtn.classList.remove('disabled');
 
@@ -227,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Se estiver no Passo 2 (Introdução), vai para o Passo 3 (Let's Talk)
-            if (!step2.classList.contains('hidden') && stepTalk) {
+            if (step2 && !step2.classList.contains('hidden') && stepTalk) {
                 step2.classList.add('hidden');
                 stepTalk.classList.remove('hidden');
                 return;
@@ -253,15 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (vocabPtContent) {
                 vocabPtContent.classList.remove('hidden');
                 vocabContinueBtn.style.display = 'none'; // Oculta o botão para dar fluidez
-                
-                // Animação de entrada
-                const items = vocabPtContent.querySelectorAll('.audio-item');
-                items.forEach((item, index) => {
-                    // Reinicia a animação de forma robusta para mobile
-                    item.style.animation = 'none';
-                    item.offsetHeight; /* trigger reflow */
-                    item.style.animation = `popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.05}s backwards`;
-                });
                 
                 // Pequeno delay para garantir que o layout atualizou antes de rolar (fix para mobile)
                 setTimeout(() => {
@@ -322,14 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 toAskPtContent.classList.remove('hidden');
                 toAskContinueBtn.style.display = 'none'; // Oculta o botão
                 
-                // Animação de entrada
-                const items = toAskPtContent.querySelectorAll('.audio-item');
-                items.forEach((item, index) => {
-                    item.style.animation = 'none';
-                    item.offsetHeight; /* trigger reflow */
-                    item.style.animation = `popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.05}s backwards`;
-                });
-                
                 // Scroll suave
                 setTimeout(() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -350,6 +318,62 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Botões de Velocidade do Áudio (Inseridos perto dos cards) ---
+    window.isAudioSlow = false;
+    
+    function updateSpeedButtons() {
+        document.querySelectorAll('.speed-toggle-btn').forEach(btn => {
+            btn.innerHTML = window.isAudioSlow ? '🐢 Áudio: Lento' : '🐇 Áudio: Normal';
+            btn.style.backgroundColor = window.isAudioSlow ? '#FF9800' : '#6C63FF';
+        });
+    }
+
+    // Procura todos os blocos de cards (vocabulário), diálogos (chat) e imagens (Let's Talk)
+    const targetContainers = document.querySelectorAll('.audio-grid, .chat-container, .svg-list');
+    targetContainers.forEach(container => {
+        const speedBtn = document.createElement('button');
+        speedBtn.className = 'speed-toggle-btn';
+        speedBtn.innerHTML = '🐇 Áudio: Normal';
+        speedBtn.title = 'Alternar velocidade do áudio';
+        speedBtn.style.cssText = `
+            grid-column: 1 / -1;
+            display: block;
+            margin: 0 auto 20px auto;
+            background-color: #6C63FF;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        `;
+        
+        speedBtn.addEventListener('mouseenter', () => speedBtn.style.transform = 'scale(1.05)');
+        speedBtn.addEventListener('mouseleave', () => speedBtn.style.transform = 'scale(1)');
+        
+        speedBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.isAudioSlow = !window.isAudioSlow;
+            updateSpeedButtons(); // Atualiza todos os botões na tela
+            
+            // Se tiver algum áudio tocando no momento do clique, já muda a velocidade
+            if (currentAudio) {
+                currentAudio.playbackRate = window.isAudioSlow ? 0.5 : 1.0;
+            }
+        });
+
+        // Insere o botão logo após o título H3 (se houver) ou no topo do container
+        const h3Title = container.querySelector('h3');
+        if (h3Title) {
+            h3Title.insertAdjacentElement('afterend', speedBtn);
+        } else {
+            container.insertBefore(speedBtn, container.firstChild);
+        }
+    });
+
     // Lógica para destacar o item de vocabulário clicado (Borda Verde)
     const audioItems = document.querySelectorAll('.audio-item');
     audioItems.forEach(item => {
@@ -368,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const playBtn = item.querySelector('.play-btn');
             if (playBtn) {
                 const audioPath = playBtn.getAttribute('data-audio');
-                playAudioWithProgress(audioPath, item, 1); // Velocidade normal ao clicar no card
+                playAudioWithProgress(audioPath, item, window.isAudioSlow ? 0.5 : 1); // Velocidade controlada pelo botão
             }
         });
     });
@@ -380,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const playBtn = bubble.querySelector('.play-mini-btn');
             if (playBtn) {
                 const audioPath = playBtn.getAttribute('data-audio');
-                playAudioWithProgress(audioPath, bubble, 1); // Velocidade normal ao clicar no balão
+                playAudioWithProgress(audioPath, bubble, window.isAudioSlow ? 0.5 : 1); // Velocidade controlada pelo botão
             }
         });
     });
@@ -439,9 +463,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const topBackArrow = document.querySelector('.back-arrow');
     if (topBackArrow) {
         topBackArrow.addEventListener('click', (e) => {
-            // Se estiver na tela principal (Greetings), a seta age normalmente (sai da página)
+            // Se estiver na tela principal, força a navegação para sair do curso
             if (step1 && !step1.classList.contains('hidden')) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                window.location.href = "../Mod1.html";
                 return;
+            }
+
+            // Se o Step 1 não existe e estamos na raiz do Step 2, a seta sai da página
+            const vocabContent = document.getElementById('vocab-content');
+            const vocabPtContent = document.getElementById('vocab-pt-content');
+            if (!step1 && step2 && !step2.classList.contains('hidden')) {
+                if ((!vocabContent || vocabContent.classList.contains('hidden')) && 
+                    (!vocabPtContent || vocabPtContent.classList.contains('hidden'))) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    window.location.href = "conteudo2.html";
+                    return;
+                }
             }
 
             e.preventDefault(); // Impede recarregamento
@@ -506,7 +546,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Reseta a seção de vocabulário da Lição 1
             if (vocabContent) vocabContent.classList.add('hidden');
-            const vocabPtContent = document.getElementById('vocab-pt-content');
             if (vocabPtContent) vocabPtContent.classList.add('hidden');
             if (toggleVocabBtn) toggleVocabBtn.style.display = 'inline-block';
             const shortcutLesson2Btn = document.getElementById('shortcut-lesson2-btn');
@@ -526,8 +565,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (prevBtn && step1 && step2) {
-        prevBtn.addEventListener('click', () => {
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            // Se estamos na página inicial, força a navegação para o menu
+            if (step1 && !step2) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                window.location.href = "../Mod1.html";
+                return;
+            }
+
+            e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
             // Para qualquer áudio tocando ao voltar (reset geral de áudio)
@@ -682,7 +730,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Se estiver no Step 2, volta para o Step 1
-            if (!step2.classList.contains('hidden')) {
+            if (step2 && !step2.classList.contains('hidden')) {
                 const vocabContent = document.getElementById('vocab-content');
                 const vocabPtContent = document.getElementById('vocab-pt-content');
                 
@@ -710,17 +758,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
 
-                step2.classList.add('hidden');
-                step1.classList.remove('hidden');
-                
-                prevBtn.classList.add('disabled');
-                if (nextBtn) {
-                    nextBtn.classList.remove('disabled');
-                    nextBtn.style.display = 'inline-block'; // Garante que o botão apareça ao voltar para o Passo 1
+                // Volta para o Step 1, ou sai da lição se o Step 1 não existir
+                if (step1) {
+                    step2.classList.add('hidden');
+                    step1.classList.remove('hidden');
+                    
+                    prevBtn.classList.add('disabled');
+                    if (nextBtn) {
+                        nextBtn.classList.remove('disabled');
+                        nextBtn.style.display = 'inline-block';
+                    }
+        
+                    if (container) container.classList.remove('transparent');
+                    document.body.classList.remove('white-bg');
+                } else {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    window.location.href = "conteudo2.html";
                 }
-    
-                if (container) container.classList.remove('transparent');
-                document.body.classList.remove('white-bg');
             }
         });
     }
@@ -737,11 +792,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Encontra o container pai (card ou balão de chat) para colocar a barra
             const container = btn.closest('.audio-item') || btn.closest('.chat-bubble') || btn.closest('.reading-card') || btn.closest('.quiz-card') || btn.closest('.full-audio-card');
             
-            // Define a velocidade: lenta (0.5) para botões individuais, normal (1) para a conversa completa
-            let speed = 0.5;
-            if (btn.closest('.full-audio-card')) {
-                speed = 1;
+            // Adiciona o destaque (borda verde) se for um card de vocabulário
+            if (container && container.classList.contains('audio-item')) {
+                document.querySelectorAll('.audio-item').forEach(i => i.classList.remove('selected-card'));
+                container.classList.add('selected-card');
             }
+
+            // Define a velocidade baseada no botão de controle global
+            let speed = window.isAudioSlow ? 0.5 : 1;
             
             playAudioWithProgress(audioPath, container, speed);
         });

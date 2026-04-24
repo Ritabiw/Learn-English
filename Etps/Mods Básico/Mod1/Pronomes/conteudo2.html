@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../curso.css">
     <link rel="stylesheet" href="style.css">
 
-    <title>Módulo 1: Greetings - Aprenda Inglês</title>
+    <title>Módulo 1: Pronomes Pessoais</title>
 </head>
 <body>
 
     <div class="container">
         <!-- Botão Voltar ao Início (Greetings) -->
-        <a href="../Mod1.html" class="back-arrow" title="Voltar ao Início">
+        <a href="../Mod1.html" class="back-arrow" title="Voltar ao Início" onclick="window.location.href='../Mod1.html'; return false;">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 12H5"></path>
                 <polyline points="12 19 5 12 12 5"></polyline>
@@ -21,30 +22,11 @@
         <div class="progress-container">
             <div class="progress-bar" id="progress-bar"></div>
         </div>
-        <header>
 
-            <!-- Passo 1: Greetings -->
-            <div id="step-1" class="step">
-                <div class="module-tag">Módulo 1</div>
+        <!-- Passo 1: Greetings -->
+        <div id="step-1" class="step">
+            <div class="module-tag">Módulo 1</div>
                 <h1>Pronomes Pessoais</h1>
-                <!-- From Uiverse.io by JkHuger --> 
-        <label for="theme" class="theme">
-	        <span class="theme__toggle-wrap">
-		        <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
-		        <span class="theme__fill"></span>
-		        <span class="theme__icon">
-			        <span class="theme__icon-part"></span>
-			        <span class="theme__icon-part"></span>
-			        <span class="theme__icon-part"></span>
-			        <span class="theme__icon-part"></span>
-			        <span class="theme__icon-part"></span>
-			        <span class="theme__icon-part"></span>
-			        <span class="theme__icon-part"></span>
-			        <span class="theme__icon-part"></span>
-			        <span class="theme__icon-part"></span>
-		        </span>
-	        </span>
-        </label>
 
                 <!-- Área do Vídeo -->
                 <div class="video-container">
@@ -54,33 +36,45 @@
                     </video>
                 </div>
 
-                <p>No inglês, usamos os pronomes pessoais para substituir os nomes de pessoas, animais ou objetos, indicando quem está realizando a ação na frase.</p>
-                <h3>🎯 Por que aprender importante? </h3>
-                <h3>1. Pronomes do sujeito (Subject Pronouns)</h3>
-                <p>Usados como sujeito da frase:</p>
-                    <p>I → eu</p>
-                    <p>You → você</p>
-                    <p>He → ele</p>
-                    <p>She → ela</p>
-                    <p>It → ele/ela (para coisas ou animais)</p>
-                <h3>2. Pronomes do objeto (Object Pronouns)</h3>
-                <p>Usados como objeto da frase:</p>
-                   <p>Me → eu</p>
-                   <p>You → você</p>
-                   <p>Him → ele</p>
-                   <p>Her → ela</p>
-                   <p>It → ele/ela (para coisas ou animais)</p>
-                   <p>Us → nós</p>
-                   <p>Them → eles<p>      
-            
-        </header>
+                <p>Os pronomes são termos que servem para acompanhar ou substituir os nomes em uma frase.</p>
+                <h3>🎯 Por que aprender os Pronomes Pessoais? </h3>
+
+                <div class="info-cards-container">
+                    <div class="info-card">
+                        <h3>Base da comunicação 🗣️</h3>
+                        <p>Eles são essenciais para formar frases simples, como “I am happy” ou “She likes music”. Sem eles, fica difícil se expressar.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Evita repetição de palavras 🔁</h3>
+                        <p>Em vez de repetir nomes o tempo todo, você usa pronomes.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Ajuda na compreensão 📚</h3>
+                        <p>Quando você entende os pronomes, consegue entender melhor textos, músicas e filmes em inglês.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Facilita o aprendizado de gramática ✍️</h3>
+                        <p>Os pronomes são usados em várias estruturas (verbos, possessivos, etc.), então aprender eles ajuda no resto do inglês.</p>
+                        <p>• I</p>
+                        <p>• You</p>
+                        <p>• He/She/It</p>
+                        <p>• We</p>
+                        <p>• They </p>
+                    </div>
+                </div>
+        </div>
+
         <div class="navigation">
-            <button id="prev-btn" class="nav-btn disabled">⬅ Anterior</button>
-            <a href="Li/liso.html" id="next-btn" class="nav-btn">Próximo ➡</a>
+            <button id="prev-btn" class="nav-btn disabled" onclick="window.location.href='../Mod1.html'">⬅ Anterior</button>
+            <button id="next-btn" class="nav-btn" onclick="window.location.href='lis1.html'">Próximo ➡</button>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script src="../../../../curso.js"></script>
 
 </body>
 </html>
