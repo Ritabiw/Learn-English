@@ -323,15 +323,6 @@ body.dark-mode .grid > div {
     background: #1f2937;
 }
 
-/* ===== PROGRESS BAR ===== */
-body.dark-mode .progress-container {
-    background: #374151;
-}
-
-body.dark-mode .progress-bar {
-    background: var(--primary-color);
-}
-
 /* ===== CTA ===== */
 body.dark-mode .cta {
     background: linear-gradient(135deg, #8b85ff, #ff7a95);
