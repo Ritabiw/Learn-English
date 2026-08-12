@@ -1,7 +1,7 @@
 /* ===== VARIÁVEIS GLOBAIS ===== */
 :root {
-    --bg-color: #ccaf97; /* Fundo mais suave e moderno */
-    --text-color: #ffffff;
+    --bg-color: #ffff; /* Fundo mais suave e moderno */
+    --text-color: #030000;
     --text-mutedz: #ffffff;
     --card-bg: #2c3e50;
     
@@ -169,6 +169,7 @@ header p {
     margin-bottom: 30px;
     font-size: 1rem;
     line-height: 1.7;
+    color: #f1f5f9;
 }
 
 /* Estilo do Link Inferior (Acessar Nível) */
